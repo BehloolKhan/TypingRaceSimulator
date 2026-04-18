@@ -19,7 +19,7 @@ public class Typist
     // The remaining three should be fairly obvious.
 
     //adding the attributes
-    private int Progress = 0;
+    private int progress = 0;
     private boolean burnOut = false;
     private int numOfBurnOuts = 0;
 
@@ -57,7 +57,14 @@ public class Typist
      */
     public void burnOut(int turns)
     {
+        if (turns > 0) {
+            this.burnOut = true;
+            this.numOfBurnOuts = turns;
+        }
 
+        else {
+            System.out.println("Burn out cannot be negative");
+        }
     }
 
     /**
@@ -67,7 +74,11 @@ public class Typist
      */
     public void recoverFromBurnout()
     {
+        this.numOfBurnOuts -= 1;
+        if (this.numOfBurnOuts <= 0) {
 
+            this.burnOut = false;
+        }
     }
 
     /**
