@@ -1,0 +1,11 @@
+# Default ignored files
+/shelf/
+
+# IntelliJ specific
+.idea/
+*.iml
+out/
+gen/
+
+# Compiled Java files
+*.class
