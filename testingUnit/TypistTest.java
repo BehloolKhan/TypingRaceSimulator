@@ -65,7 +65,11 @@ public class TypistTest {
     static void testRecoverFromBurnOut () {
 
         //first the player must be in a burnt OUT state
-        testBurnOut(2);
+        System.out.println("***************************");
+        testBurnOut(initialBurntOut);
+        descriptionTypist();
+
+        System.out.println("Stats after burnt out");
         typist.recoverFromBurnout();
 
     }
