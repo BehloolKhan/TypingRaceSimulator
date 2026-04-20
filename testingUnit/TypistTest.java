@@ -17,7 +17,7 @@ public class TypistTest {
         //This will be the method that calls the tests;
         //
         setup();
-        test_cases_testBurnOut();
+        test_cases_recoverFromBurntOut();
 
     }
 
@@ -65,9 +65,11 @@ public class TypistTest {
     static void testRecoverFromBurnOut (int initialBurntOut) {
 
         //first the player must be in a burnt OUT state
-        System.out.println("***************************");
+        System.out.println("Stats after burnt out");
         testBurnOut(initialBurntOut);
         descriptionTypist();
+
+        System.out.println(" ");
 
         System.out.println("Stats after burnt out");
         typist.recoverFromBurnout();
@@ -80,7 +82,16 @@ public class TypistTest {
         testCases.put("TRB-001", new compositeTestCase("valid", 3));
         testCases.put("TRB-002", new compositeTestCase("boundary", 1));
 
+        for (String key : testCases.keySet()) {
 
+            System.out.println("***************************");
+            System.out.print("Test ID: " + key);
+            System.out.print("               ");
+            System.out.println("Category: " + testCases.get(key).description());
+
+            testRecoverFromBurnOut(testCases.get(key).number());
+            setup();
+        }
     }
 
 
