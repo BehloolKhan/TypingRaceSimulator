@@ -129,7 +129,7 @@ public class TypistTest {
         }
     }
 
-    static void testResetToStart(int turns, double newAccuracy) {
+    static void testResetToStart(int turns, double newAccuracy, int progress) {
 
         //make the player enter a burn out state:
         typist.burnOut(turns);
