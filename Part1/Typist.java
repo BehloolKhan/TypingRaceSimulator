@@ -182,6 +182,16 @@ public class Typist
      */
     public void setAccuracy(double newAccuracy)
     {
+        this.accuracy = newAccuracy;
+        if (this.accuracy < 0.0) {
+
+            this.accuracy = 0.0;
+        }
+
+        if (this.accuracy > 1.0) {
+
+            this.accuracy = 1.0;
+        }
 
     }
 
