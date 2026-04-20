@@ -29,8 +29,13 @@ public class TypistTest {
     static void testBurnOut (int turns) {
 
         typist.burnOut(turns);
+    }
+
+    //used to display info about a typist states
+    static void descriptionTypist() {
         System.out.println("The number of burnOut turns remaining is: " + typist.getBurnoutTurnsRemaining());
         System.out.println("The player is burnt out: " + typist.isBurntOut());
+
     }
 
     //This method will run the different test cases on the burnOut method:
@@ -51,9 +56,19 @@ public class TypistTest {
             //now going to call the test case value on the burnOut method
             //
             testBurnOut(testCases.get(key).number());
+            descriptionTypist();
             setup(); //as a way to reset the value of burn out and isBurnt out for testing methods
         }
 
     }
+
+    static void testRecoverFromBurnOut () {
+
+        //first the player must be in a burnt OUT state
+        testBurnOut(2);
+        typist.recoverFromBurnout();
+
+    }
+
 
 }
