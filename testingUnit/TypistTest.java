@@ -37,6 +37,7 @@ public class TypistTest {
         System.out.println("The player is burnt out: " + typist.isBurntOut());
         System.out.println("The player's current progress is: " + typist.getProgress());
         System.out.println("The accuracy of the player is: " + typist.getAccuracy());
+
     }
 
     //This method will run the different test cases on the burnOut method:
