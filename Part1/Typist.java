@@ -208,7 +208,7 @@ public class Typist
      */
     public void setSymbol(char newSymbol)
     {
-
+        this.typistSymbol = newSymbol;
     }
 
 }
