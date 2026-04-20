@@ -17,7 +17,7 @@ public class TypistTest {
         //This will be the method that calls the tests;
         //
         setup();
-        test_cases_testResetToStart();
+        test_cases_testSlideBack();
 
     }
 
