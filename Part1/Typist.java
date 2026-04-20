@@ -63,7 +63,6 @@ public class Typist
             this.burnOut = true;
             this.numOfBurnOuts = turns;
         }
-
         else {
             System.out.println("number of turns to be burnt cannot be O or less");
         }

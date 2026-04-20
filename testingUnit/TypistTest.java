@@ -44,9 +44,14 @@ public class TypistTest {
 
         for (String key: testCases.keySet()) {
 
-            System.out.println(key);
-            System.out.println(testCases.get(key).description());
-            System.out.println(testCases.get(key).number());
+            System.out.print("Test case ID: "+ key);
+            System.out.print("           ");
+            System.out.println("Category: " + testCases.get(key).description());
+
+            //now going to call the test case value on the burnOut method
+            //
+            testBurnOut(testCases.get(key).number());
+            setup(); //as a way to reset the value of burn out and isBurnt out for testing methods
         }
 
     }
