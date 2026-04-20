@@ -42,10 +42,12 @@ public class TypistTest {
         testCases.put("TB-002", new compositeTestCase("invalid", -2));
         testCases.put("TB-003", new compositeTestCase("boundary", 0));
 
-        HashMap<String, Integer> testCases= new HashMap<String, Integer>(3);
-        testCases.put("TB-001", 3);
-        testCases.put("TB-002", -2);
-        testCases.put("TB-003", 0);
+        for (String key: testCases.keySet()) {
+
+            System.out.println(key);
+            System.out.println(testCases.get(key).description());
+            System.out.println(testCases.get(key).number());
+        }
 
     }
 
