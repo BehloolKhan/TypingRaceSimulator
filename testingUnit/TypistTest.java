@@ -8,7 +8,7 @@ import java.util.HashMap;
 record compositeTestCase (String description, int number) {};
 record compositeTestCaseDouble(String description, double number) {};
 
-//The purpose of this class is to Test the methods in the TypistClass
+        //The purpose of this class is to Test the methods in the TypistClass
 public class TypistTest {
 
     static Typist typist;
