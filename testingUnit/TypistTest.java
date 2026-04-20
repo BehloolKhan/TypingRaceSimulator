@@ -110,5 +110,23 @@ public class TypistTest {
         System.out.println("Accuracy set to: " + typist.getAccuracy());
     }
 
+    static void test_cases_testSetAccuracy() {
+        HashMap<String, compositeTestCaseDouble> testCases= new HashMap<String, compositeTestCaseDouble>(5);
+
+        testCases.put("TRB-001", new compositeTestCaseDouble("valid", 0.5));
+        testCases.put("TRB-002", new compositeTestCaseDouble("invalid", -0.1));
+        testCases.put("TRB-003", new compositeTestCaseDouble("invalid", 1.1));
+        testCases.put("TRB-004", new compositeTestCaseDouble("boundary", 0.0));
+        testCases.put("TRB-005", new compositeTestCaseDouble("boundary", 1.0));
+
+        for (String key: testCases.keySet()) {
+
+            System.out.println("**************************");
+            System.out.println("Test case ID: " + key + "                  Category: " + testCases.get(key).description());
+            testSetAccuracy(testCases.get(key).number());
+            setup();
+        }
+    }
+
 
 }
