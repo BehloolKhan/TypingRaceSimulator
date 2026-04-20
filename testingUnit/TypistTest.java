@@ -35,7 +35,7 @@ public class TypistTest {
     static void descriptionTypist() {
         System.out.println("The number of burnOut turns remaining is: " + typist.getBurnoutTurnsRemaining());
         System.out.println("The player is burnt out: " + typist.isBurntOut());
-
+        System.out.println("The accuracy of the player is: " + typist.getAccuracy());
     }
 
     //This method will run the different test cases on the burnOut method:
@@ -129,5 +129,21 @@ public class TypistTest {
         }
     }
 
+    static void testResetToStart(int turns, double newAccuracy) {
 
+        //make the player enter a burn out state:
+        typist.burnOut(turns);
+        typist.setAccuracy(newAccuracy);
+
+        System.out.println("Stats before");
+        descriptionTypist();
+        System.out.println("         ");
+
+        typist.resetToStart();
+        System.out.println("Method: reset after being applied: ");
+
+        System.out.println("Stats after");
+        descriptionTypist();
+        System.out.println("         ");
+    }
 }
