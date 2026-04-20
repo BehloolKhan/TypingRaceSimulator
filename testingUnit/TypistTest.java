@@ -103,4 +103,12 @@ public class TypistTest {
         typist.typeCharacter();
         System.out.println("Progress after: " + typist.getProgress());
     }
+
+    static void testSetAccuracy(double Accuracy) {
+        System.out.println("Accuracy supplied: " + Accuracy);
+        typist.setAccuracy(Accuracy);
+        System.out.println("Accuracy set to: " + typist.getAccuracy());
+    }
+
+
 }
