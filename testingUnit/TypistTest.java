@@ -171,4 +171,32 @@ public class TypistTest {
             typist.typeCharacter();
         }
     }
+
+    static void testSlideBack(int amount) {
+
+        //progress will always be set to 10:
+        setProgress(10);
+        System.out.println("Current Progress Before slide Back: " + typist.getProgress());
+
+        System.out.println("The typist is sliding back.....");
+        typist.slideBack(amount);
+
+        System.out.println("Current Progress after slide Back: " + typist.getProgress());
+
+    }
+
+    static void test_cases_testSlideBack() {
+
+        int [] amounts = {5, 10, 15};
+        String [] Test_IDS = {"TSB-001", "TSB-002", "TSB-003"};
+        String [] categories = {"Valid", "Boundary", "invalid"};
+
+        for (int i = 0; i < 3; ++i) {
+
+            System.out.println("Test case ID: " + Test_IDS[i] + "              category: " + categories[i]);
+            testSlideBack(amounts[i]);
+            typist.resetToStart();
+            
+        }
+    }
 }
