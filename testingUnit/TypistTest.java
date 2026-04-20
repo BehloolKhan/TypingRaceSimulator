@@ -35,6 +35,7 @@ public class TypistTest {
     static void descriptionTypist() {
         System.out.println("The number of burnOut turns remaining is: " + typist.getBurnoutTurnsRemaining());
         System.out.println("The player is burnt out: " + typist.isBurntOut());
+        System.out.println("The player's current progress is: " + typist.getProgress());
         System.out.println("The accuracy of the player is: " + typist.getAccuracy());
     }
 
