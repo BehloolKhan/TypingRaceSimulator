@@ -65,7 +65,7 @@ public class Typist
         }
 
         else {
-            System.out.println("Burn out cannot be negative");
+            System.out.println("number of turns to be burnt cannot be O or less");
         }
     }
 
