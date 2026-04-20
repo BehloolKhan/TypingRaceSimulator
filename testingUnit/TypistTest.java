@@ -17,7 +17,7 @@ public class TypistTest {
         //This will be the method that calls the tests;
         //
         setup();
-        testTypeCharacter();
+        test_cases_testResetToStart();
 
     }
 
