@@ -134,6 +134,7 @@ public class TypistTest {
         //make the player enter a burn out state:
         typist.burnOut(turns);
         typist.setAccuracy(newAccuracy);
+        setProgress(progress);
 
         System.out.println("Stats before");
         descriptionTypist();
