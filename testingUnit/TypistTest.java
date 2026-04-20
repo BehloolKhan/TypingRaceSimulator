@@ -178,7 +178,7 @@ public class TypistTest {
         setProgress(10);
         System.out.println("Current Progress Before slide Back: " + typist.getProgress());
 
-        System.out.println("The typist is sliding back.....");
+        System.out.println("The typist is sliding back by " + amount + ".....");
         typist.slideBack(amount);
 
         System.out.println("Current Progress after slide Back: " + typist.getProgress());
