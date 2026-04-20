@@ -198,7 +198,7 @@ public class TypistTest {
             System.out.println("Test case ID: " + Test_IDS[i] + "              category: " + categories[i]);
             testSlideBack(amounts[i]);
             typist.resetToStart();
-            
+
         }
     }
 }
