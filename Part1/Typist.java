@@ -141,7 +141,9 @@ public class Typist
      */
     public void resetToStart()
     {
-
+        this.progress = 0; //reset progress to 0
+        this.burnOut = false; //exit burn out state
+        this.numOfBurnOuts = 0; //reset to 0
     }
 
     /**
