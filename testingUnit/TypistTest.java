@@ -35,7 +35,12 @@ public class TypistTest {
 
     //This method will run the different test cases on the burnOut method:
     //
-    void test_cases_testBurnOut() {
+    static void test_cases_testBurnOut() {
+
+        HashMap<String, compositeTestCase> testCases= new HashMap<String, compositeTestCase>(3);
+        testCases.put("TB-001", new compositeTestCase("valid", 3));
+        testCases.put("TB-002", new compositeTestCase("invalid", -2));
+        testCases.put("TB-003", new compositeTestCase("boundary", 0));
 
         HashMap<String, Integer> testCases= new HashMap<String, Integer>(3);
         testCases.put("TB-001", 3);
