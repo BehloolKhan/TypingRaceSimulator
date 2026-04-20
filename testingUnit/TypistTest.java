@@ -22,7 +22,7 @@ public class TypistTest {
 
     static void setup() {
 
-        typist = new Typist('①', "playerOne", 0.5);
+        typist = new Typist('\u2460', "playerOne", 0.5);
     }
 
     static void testBurnOut (int turns) {
