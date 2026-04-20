@@ -133,7 +133,7 @@ public class Typist
      */
     public int getBurnoutTurnsRemaining()
     {
-        return 0; // placeholder - replace with correct implementation
+        return this.numOfBurnOuts; // placeholder - replace with correct implementation
     }
 
     /**
@@ -152,7 +152,7 @@ public class Typist
      */
     public boolean isBurntOut()
     {
-        return false; // placeholder - replace with correct implementation
+        return this.burnOut; // placeholder - replace with correct implementation
     }
 
     /**
