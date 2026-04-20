@@ -2,7 +2,6 @@ package testingUnit;
 
 import Part1.Typist;
 import java.util.HashMap;
-import java.lang.Integer;
 
 //This record will be used when mapping a test ID to a test case in the burnt out method
 //a test case usually has two attributes: the value to test and a description specifiying its validity
@@ -17,7 +16,7 @@ public class TypistTest {
         //This will be the method that calls the tests;
         //
         setup();
-        test_cases_recoverFromBurntOut();
+        testTypeCharacter();
 
     }
 
@@ -94,5 +93,14 @@ public class TypistTest {
         }
     }
 
+    static void testTypeCharacter() {
 
+        System.out.print("Test ID: TT-001");
+        System.out.print("               ");
+        System.out.println("Category: boundary/valid");
+        System.out.println("Progress Before: " + typist.getProgress());
+        System.out.println("Method be loading....");
+        typist.typeCharacter();
+        System.out.println("Progress after: " + typist.getProgress());
+    }
 }
