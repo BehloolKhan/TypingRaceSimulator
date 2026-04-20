@@ -145,6 +145,7 @@ public class TypistTest {
         System.out.println("Stats after");
         descriptionTypist();
         System.out.println("         ");
+
     }
 
     static void test_cases_testResetToStart() {
