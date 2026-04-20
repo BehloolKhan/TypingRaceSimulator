@@ -62,7 +62,7 @@ public class TypistTest {
 
     }
 
-    static void testRecoverFromBurnOut () {
+    static void testRecoverFromBurnOut (int initialBurntOut) {
 
         //first the player must be in a burnt OUT state
         System.out.println("***************************");
@@ -71,6 +71,15 @@ public class TypistTest {
 
         System.out.println("Stats after burnt out");
         typist.recoverFromBurnout();
+        descriptionTypist();
+
+    }
+
+    static void test_cases_recoverFromBurntOut () {
+        HashMap<String, compositeTestCase> testCases= new HashMap<String, compositeTestCase>(2);
+        testCases.put("TRB-001", new compositeTestCase("valid", 3));
+        testCases.put("TRB-002", new compositeTestCase("boundary", 1));
+
 
     }
 
