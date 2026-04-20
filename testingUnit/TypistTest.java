@@ -6,6 +6,7 @@ import java.util.HashMap;
 //This record will be used when mapping a test ID to a test case in the burnt out method
 //a test case usually has two attributes: the value to test and a description specifiying its validity
 record compositeTestCase (String description, int number) {};
+record compositeTestCaseDouble(String description, double number) {};
 
 //The purpose of this class is to Test the methods in the TypistClass
 public class TypistTest {
