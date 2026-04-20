@@ -146,4 +146,27 @@ public class TypistTest {
         descriptionTypist();
         System.out.println("         ");
     }
+
+    static void test_cases_testResetToStart() {
+
+        double [] accuracies = {0.5, 0.1};
+        int [] turns = {3, 2};
+        String [] Test_code = {"TRT-001", "TRT-002"};
+        int [] progress = {10, 12};
+
+        for (int i = 0; i < 2; ++i) {
+
+            System.out.println("Test ID: " + Test_code[i] + "     ");
+            testResetToStart(turns[i], accuracies[i], progress[i]);
+        }
+
+    }
+
+    static void setProgress(int progress) {
+        //allows u to set progress for testing purposes
+        //
+        for (int i=1; i <= progress; ++i) {
+            typist.typeCharacter();
+        }
+    }
 }
