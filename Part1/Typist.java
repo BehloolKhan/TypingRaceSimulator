@@ -160,7 +160,7 @@ public class Typist
      */
     public void typeCharacter()
     {
-
+        this.progress += 1;
     }
 
     /**
