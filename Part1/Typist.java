@@ -173,6 +173,8 @@ public class Typist
      */
     public void slideBack(int amount)
     {
+        this.progress -= amount;
+        if (this.progress < 0) {
 
     }
 
