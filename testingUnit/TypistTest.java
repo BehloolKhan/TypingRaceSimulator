@@ -71,7 +71,7 @@ public class TypistTest {
 
         System.out.println(" ");
 
-        System.out.println("Stats after burnt out");
+        System.out.println("Stats after ");
         typist.recoverFromBurnout();
         descriptionTypist();
 
