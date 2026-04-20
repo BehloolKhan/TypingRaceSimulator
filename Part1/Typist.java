@@ -176,6 +176,8 @@ public class Typist
         this.progress -= amount;
         if (this.progress < 0) {
 
+            this.progress = 0; //make sure progress cannot go below 0
+        }
     }
 
     /**
