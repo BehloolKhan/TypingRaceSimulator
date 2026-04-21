@@ -17,3 +17,8 @@ I need to make sure this Read me file includes precise
 instructions on how to compile and run my code correctly given 
 my package structure so that processor can compile and run code
 without difficulties
+
+### compilation of files:
+* `chcp 65001` - windows
+* `javac testingUnit/TypistTest.java`
+* `java "-Dfile.encoding=UTF-8" testingUnit.TypistTest`
