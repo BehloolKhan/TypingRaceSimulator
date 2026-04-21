@@ -2,6 +2,7 @@ package Part1;
 
 import java.util.concurrent.TimeUnit;
 import java.lang.Math;
+import Part1.Typist;
 
 /**
  * A typing race simulation. Three typists race to complete a passage of text,
