@@ -267,4 +267,14 @@ public class TypingRace
             i = i + 1;
         }
     }
+
+    //method the sets length of passage before the start of each race
+    private static void setPassageLength(int length) {
+        final int minimumLength = 3;
+        if (length < minimumLength) {
+            TypingRace.passageLength = 3;
+            return;
+        }
+        TypingRace.passageLength = length;
+    }
 }
