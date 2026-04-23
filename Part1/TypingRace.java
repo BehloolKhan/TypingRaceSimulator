@@ -182,6 +182,7 @@ public class TypingRace
             theTypist.setPreviousAccuracy();
             theTypist.setAccuracy(theTypist.getAccuracy() + 0.1);
             return true;
+
         }
         else
         {
