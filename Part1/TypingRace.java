@@ -162,6 +162,9 @@ public class TypingRace
         if (Math.random() < 0.05 * theTypist.getAccuracy() * theTypist.getAccuracy())
         {
             theTypist.burnOut(BURNOUT_DURATION);
+            //need to slightly decrease it
+            theTypist.setPreviousAccuracy();
+            theTypist.setAccuracy(theTypist.getAccuracy() - 0.05);
         }
     }
 
