@@ -213,5 +213,6 @@ public class Typist
     {
         this.typistSymbol = newSymbol;
     }
+    
 
 }
