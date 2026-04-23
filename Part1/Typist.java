@@ -220,4 +220,11 @@ public class Typist
     public void setPreviousAccuracy() {
         this.previousAccuracy = this.getAccuracy();
     }
+
+    /*
+    * Method to return previous accuracy
+    */
+    public double getPreviousAccuracy() {
+        return this.previousAccuracy;
+    }
 }
