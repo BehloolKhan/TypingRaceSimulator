@@ -213,6 +213,11 @@ public class Typist
     {
         this.typistSymbol = newSymbol;
     }
-    
 
+    //This method will keep a track of the previous accuracy
+    // before the accuracy is modified
+    //
+    public void setPreviousAccuracy() {
+        this.previousAccuracy = this.getAccuracy();
+    }
 }
