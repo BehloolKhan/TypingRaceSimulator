@@ -38,9 +38,7 @@ public class TypingRace
     public TypingRace(int passageLength)
     {
         this.passageLength = passageLength;
-        seat1Typist = null;
-        seat2Typist = null;
-        seat3Typist = null;
+       
     }
 
     public static void main (String[] args) {
