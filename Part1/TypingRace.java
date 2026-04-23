@@ -47,10 +47,12 @@ public class TypingRace
         addTypist(new Typist('\u2461', "QWERTY_QUEEN", 0.5), 2);
         addTypist(new Typist('\u2462', "HUNT_N_PECK", 0.5), 3);
 
-
-        int newPassageLength = TypingRace.generateRandomPassageLength();
-        new TypingRace(newPassageLength);
-        startRace();
+        final int numberOfRaces = inputNumberRaces();
+        for (int i = 1; i <= numberOfRaces) {
+            int newPassageLength = TypingRace.generateRandomPassageLength();
+            new TypingRace(newPassageLength);
+            startRace();
+        }
     }
 
     /**
