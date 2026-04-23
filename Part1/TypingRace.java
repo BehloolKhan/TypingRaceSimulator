@@ -121,6 +121,46 @@ public class TypingRace
         }
 
         // TODO (Task 2a): Print the winner's name here
+        Typist [] arrayTypist = {seat1Typist, seat2Typist, seat3Typist};
+        Typist [] possibleWinners = new Typist[3];
+
+        int countOne = 0;
+        int countTwo = 0;
+        while (countOne < arrayTypist.length) {
+            if (arrayTypist[countOne].getProgress() >= passageLength) {
+                possibleWinners[countTwo] = arrayTypist[countOne];
+                countTwo += 1;
+            }
+            countOne+=1;
+        }
+
+        ArrayList<Typist> winners = new ArrayList<Typist>(3);
+        winners.add(possibleWinners[0]);
+
+        int maxValue = possibleWinners[0].getProgress();
+
+        for (int i = 1; i < countTwo; ++i) {
+
+             if (possibleWinners[i].getProgress() > maxValue) {
+                 winners.clear();
+                 maxValue = possibleWinners[i].getProgress();
+                 winners.add(possibleWinners[i]);
+             }
+
+             else if (possibleWinners[i].getProgress() == maxValue) {
+                 winners.add(possibleWinners[i]);
+             }
+        }
+
+        //now need to get the name of winners
+        //
+        System.out.print("And the winner(s) is/are... ");
+        for (int i = 0; i < winners.size(); ++i) {
+            System.out.print(winners.get(i).getName());
+            System.out.print(", ");
+        }
+        
+
     }
 
     /**
