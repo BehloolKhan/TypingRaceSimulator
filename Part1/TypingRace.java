@@ -289,4 +289,15 @@ public class TypingRace
         //making sure minimum length is 3
         return r.nextInt(100) + 3;
     }
+
+    //method allows user to input integer answer to a question:
+    //
+    public static int inputInt(String Message) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print(Message);
+        String answer = scanner.nextLine();
+
+        return Integer.parseInt(answer);
+    }
 }
