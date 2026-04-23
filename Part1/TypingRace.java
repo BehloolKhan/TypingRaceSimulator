@@ -300,4 +300,16 @@ public class TypingRace
 
         return Integer.parseInt(answer);
     }
+
+    //allows the user to input the number of races they want:
+    //until its greater than 0
+    public static int inputNumberRaces() {
+        int number = inputInt("Enter the number of races: ");
+        while (number <= 0) {
+            System.out.println("The number of races must be greater than 0");
+            number = inputInt("Enter the number of races: ");
+        }
+
+        return number;
+    }
 }
