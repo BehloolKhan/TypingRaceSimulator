@@ -48,7 +48,7 @@ public class TypingRace
         addTypist(new Typist('\u2462', "HUNT_N_PECK", 0.5), 3);
 
         final int numberOfRaces = inputNumberRaces();
-        for (int i = 1; i <= numberOfRaces) {
+        for (int i = 1; i <= numberOfRaces; ++i) {
             int newPassageLength = TypingRace.generateRandomPassageLength();
             new TypingRace(newPassageLength);
             startRace();
