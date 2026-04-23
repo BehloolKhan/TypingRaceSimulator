@@ -37,8 +37,8 @@ public class TypingRace
      */
     public TypingRace(int passageLength)
     {
-        this.passageLength = passageLength;
-       
+        setPassageLength(passageLength); //contains validation logic
+
     }
 
     public static void main (String[] args) {
