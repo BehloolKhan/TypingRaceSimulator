@@ -277,4 +277,12 @@ public class TypingRace
         }
         TypingRace.passageLength = length;
     }
+
+    //used to generate random passage length;
+    //
+    private static int generateRandomPassageLength() {
+        Random r = new Random();
+        //making sure minimum length is 3
+        return r.nextInt(100) + 3;
+    }
 }
