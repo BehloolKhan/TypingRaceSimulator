@@ -43,6 +43,11 @@ public class TypingRace
         seat3Typist = null;
     }
 
+    public static void main (String[] args) {
+
+        startRace();
+    }
+
     /**
      * Seats a typist at the given seat number (1, 2, or 3).
      *
