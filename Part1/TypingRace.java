@@ -349,7 +349,7 @@ public class TypingRace
     private static int generateRandomPassageLength() {
         Random r = new Random();
         //making sure minimum length is 3
-        return r.nextInt(100) + 3;
+        return r.nextInt(47) + 3;
     }
 
     //method allows user to input integer answer to a question:
