@@ -30,7 +30,7 @@ public class TypingRace
     private static final int    SLIDE_BACK_AMOUNT   = 2;
     private static final int    BURNOUT_DURATION     = 3;
 
-  
+
 
     public static void main (String[] args) {
 
