@@ -41,7 +41,7 @@ public class TypingRace
         final int numberOfRaces = inputNumberRaces();
         for (int i = 1; i <= numberOfRaces; ++i) {
             int newPassageLength = TypingRace.generateRandomPassageLength();
-            new TypingRace(newPassageLength);
+            setPassageLength(newPassageLength);
             startRace();
         }
     }
