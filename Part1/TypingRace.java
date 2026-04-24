@@ -223,7 +223,6 @@ public class TypingRace
         // Ty was confident this condition was correct
         if (theTypist.getProgress() >= passageLength)
         {
-            
             return true;
 
         }
