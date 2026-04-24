@@ -223,8 +223,7 @@ public class TypingRace
         // Ty was confident this condition was correct
         if (theTypist.getProgress() >= passageLength)
         {
-            theTypist.setPreviousAccuracy();
-            theTypist.setAccuracy(theTypist.getAccuracy() + 0.1);
+            
             return true;
 
         }
