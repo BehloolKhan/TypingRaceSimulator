@@ -316,6 +316,12 @@ public class TypingRace
                 + " (Accuracy: " + theTypist.getAccuracy() + ")"
                 + " BURNT OUT (" + theTypist.getBurnoutTurnsRemaining() + " turns)");
         }
+        else if (theTypist.hasMistyped()) {
+            System.out.print(theTypist.getName()
+                    + " (Accuracy: " + theTypist.getAccuracy() + ")"
+                    + " <- just mistyped");
+            theTypist.exitMistyped(); //exit state
+        }
         else
         {
             System.out.print(theTypist.getName()
