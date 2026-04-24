@@ -227,4 +227,15 @@ public class Typist
     public double getPreviousAccuracy() {
         return this.previousAccuracy;
     }
+
+    /*
+    * method sets the mistyped field to true when player has mistyped
+    * */
+
+    public void setMistyped() {
+        this.mistyped = true;
+    }
+
+    /*
+    * method that*/
 }
