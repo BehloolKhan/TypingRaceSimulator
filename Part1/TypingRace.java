@@ -52,7 +52,7 @@ public class TypingRace
      * @param theTypist  the typist to seat
      * @param seatNumber the seat to place them in (1–3)
      */
-    public void addTypist(Typist theTypist, int seatNumber)
+    public static void addTypist(Typist theTypist, int seatNumber)
     {
         if (seatNumber == 1)
         {
@@ -80,7 +80,7 @@ public class TypingRace
      * Note from Ty: "I didn't bother printing the winner at the end,
      * you can probably figure that out yourself."
      */
-    public void startRace()
+    public static void startRace()
     {
         boolean finished = false;
 
@@ -158,7 +158,7 @@ public class TypingRace
                     winners.get(i).getPreviousAccuracy() + " )");
             System.out.println(" ");
         }
-        
+
 
     }
 
@@ -175,7 +175,7 @@ public class TypingRace
      *
      * @param theTypist the typist to advance
      */
-    private void advanceTypist(Typist theTypist)
+    private static void advanceTypist(Typist theTypist)
     {
         if (theTypist.isBurntOut())
         {
@@ -218,7 +218,7 @@ public class TypingRace
      * @param theTypist the typist to check
      * @return true if their progress has reached or passed the passage length
      */
-    private boolean raceFinishedBy(Typist theTypist)
+    private static boolean raceFinishedBy(Typist theTypist)
     {
         // Ty was confident this condition was correct
         if (theTypist.getProgress() >= passageLength)
@@ -237,7 +237,7 @@ public class TypingRace
      * Shows each typist's position along the passage, burnout state,
      * and a WPM estimate based on current progress.
      */
-    private void printRace()
+    private static void printRace()
     {
         System.out.print('\u000C'); // Clear terminal
 
@@ -271,7 +271,7 @@ public class TypingRace
      *
      * @param theTypist the typist whose lane to print
      */
-    private void printSeat(Typist theTypist)
+    private static void printSeat(Typist theTypist)
     {
         int spacesBefore = theTypist.getProgress();
         int spacesAfter  = passageLength - theTypist.getProgress();
@@ -324,7 +324,7 @@ public class TypingRace
      * @param aChar the character to print
      * @param times how many times to print it
      */
-    private void multiplePrint(char aChar, int times)
+    private static void multiplePrint(char aChar, int times)
     {
         int i = 0;
         while (i < times)
