@@ -165,7 +165,9 @@ public class TypingRace
         System.out.print("And the winner(s) is/are... ");
         for (int i = 0; i < winners.size(); ++i) {
             System.out.print(winners.get(i).getName());
-            System.out.print(", ");
+            System.out.println(": Final Accuracy: " + winners.get(i).getAccuracy() + " (improved from " +
+                    winners.get(i).getPreviousAccuracy() + " )");
+            System.out.println(" ");
         }
         
 
