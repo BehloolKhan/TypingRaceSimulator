@@ -299,6 +299,12 @@ public class TypingRace
             spacesAfter--; // symbol + ~ together take two characters
         }
 
+        if (theTypist.hasMistyped()) {
+            System.out.print("[<]");
+            spacesAfter-=3; //[<] = 3 characters
+
+        }
+
         multiplePrint(' ', spacesAfter);
         System.out.print('|');
         System.out.print(' ');
