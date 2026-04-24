@@ -30,7 +30,7 @@ public class Typist
     private char typistSymbol;
 
     private double previousAccuracy = 0.0;
-
+    private boolean mistyped = false;
 
     // Constructor of class Typist
     /**
