@@ -237,5 +237,9 @@ public class Typist
     }
 
     /*
-    * method that*/
+    * method that causes player to enter burnt out state*/
+
+    public void exitMistyped() {
+        this.mistyped = false;
+    }
 }
