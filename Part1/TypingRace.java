@@ -154,6 +154,12 @@ public class TypingRace
              }
         }
 
+        //need to update the accuracy of the winners accordingly:
+        //
+        for (int i = 0; i < winners.size(); ++i) {
+            winners.get(i).setPreviousAccuracy();
+            winners.get(i).setAccuracy(winners.get(i).getAccuracy() + 0.1);
+        }
         //now need to get the name of winners
         //
         System.out.print("And the winner(s) is/are... ");
