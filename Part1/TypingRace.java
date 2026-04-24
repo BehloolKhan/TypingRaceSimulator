@@ -194,7 +194,7 @@ public class TypingRace
         // The higher accuracy, the lower 1.0/accuracy is, meaning the lower the chance that condition
         // evaluates to true -> lower chance of slideBack
 
-        if ((theTypist.getAccuracy() != 0.0) & (Math.random() <= (1.0 - theTypist.getAccuracy())))
+        if ( Math.random() <= ( (1.0 - theTypist.getAccuracy() ) * MISTYPE_BASE_CHANCE ) )
         {
             theTypist.slideBack(SLIDE_BACK_AMOUNT);
             theTypist.setMistyped();
