@@ -207,6 +207,8 @@ public class TypingRace
         if (Math.random() < (1.0/theTypist.getAccuracy()) * MISTYPE_BASE_CHANCE)
         {
             theTypist.slideBack(SLIDE_BACK_AMOUNT);
+            theTypist.setMistyped();
+
         }
 
         // Burnout check — pushing too hard increases burnout risk
