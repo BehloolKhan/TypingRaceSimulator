@@ -162,7 +162,7 @@ public class TypingRace
         }
         //now need to get the name of winners
         //
-        System.out.print("And the winner(s) is/are... ");
+        System.out.println("And the winner(s) is/are:... ");
         for (int i = 0; i < winners.size(); ++i) {
             System.out.print(winners.get(i).getName());
             System.out.println(": Final Accuracy: " + winners.get(i).getAccuracy() + " (improved from " +
