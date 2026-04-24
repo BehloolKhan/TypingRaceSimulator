@@ -243,4 +243,12 @@ public class Typist
     public void exitMistyped() {
         this.mistyped = false;
     }
+
+    /*
+    * returns true if typist has mistyped, false otherwise
+    * */
+
+    public boolean hasMistyped() {
+        return this.mistyped;
+    }
 }
