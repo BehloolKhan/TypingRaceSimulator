@@ -30,18 +30,7 @@ public class TypingRace
     private static final int    SLIDE_BACK_AMOUNT   = 2;
     private static final int    BURNOUT_DURATION     = 3;
 
-    /**
-     * Constructor for objects of class TypingRace.
-     * Sets up the race with a passage of the given length.
-     * Initially there are no typists seated.
-     *
-     * @param passageLength the number of characters in the passage to type
-     */
-    public TypingRace(int passageLength)
-    {
-        setPassageLength(passageLength); //contains validation logic
-
-    }
+  
 
     public static void main (String[] args) {
 
