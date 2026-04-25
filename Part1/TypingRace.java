@@ -175,7 +175,7 @@ public class TypingRace
      *
      * @param theTypist the typist to advance
      */
-    private static void advanceTypist(Typist theTypist)
+    public static void advanceTypist(Typist theTypist)
     {
         if (theTypist.isBurntOut())
         {
@@ -218,7 +218,7 @@ public class TypingRace
      * @param theTypist the typist to check
      * @return true if their progress has reached or passed the passage length
      */
-    private static boolean raceFinishedBy(Typist theTypist)
+    public static boolean raceFinishedBy(Typist theTypist)
     {
         // Ty was confident this condition was correct
         if (theTypist.getProgress() >= passageLength)
@@ -237,7 +237,7 @@ public class TypingRace
      * Shows each typist's position along the passage, burnout state,
      * and a WPM estimate based on current progress.
      */
-    private static void printRace()
+    public static void printRace()
     {
         System.out.print('\u000C'); // Clear terminal
 
@@ -271,7 +271,7 @@ public class TypingRace
      *
      * @param theTypist the typist whose lane to print
      */
-    private static void printSeat(Typist theTypist)
+    public static void printSeat(Typist theTypist)
     {
         int spacesBefore = theTypist.getProgress();
         int spacesAfter  = passageLength - theTypist.getProgress();
@@ -324,7 +324,7 @@ public class TypingRace
      * @param aChar the character to print
      * @param times how many times to print it
      */
-    private static void multiplePrint(char aChar, int times)
+    public static void multiplePrint(char aChar, int times)
     {
         int i = 0;
         while (i < times)
@@ -335,7 +335,7 @@ public class TypingRace
     }
 
     //method the sets length of passage before the start of each race
-    private static void setPassageLength(int length) {
+    public static void setPassageLength(int length) {
         final int minimumLength = 3;
         if (length < minimumLength) {
             TypingRace.passageLength = 3;
@@ -346,7 +346,7 @@ public class TypingRace
 
     //used to generate random passage length;
     //
-    private static int generateRandomPassageLength() {
+    public static int generateRandomPassageLength() {
         Random r = new Random();
         //making sure minimum length is 3
         return r.nextInt(47) + 3;
