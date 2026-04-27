@@ -30,15 +30,15 @@ public class GuiTypingRace
         initialiseTypists();
         displayFrame();
 
-        final int numberOfRaces = inputNumberRaces();
-        for (int i = 1; i <= numberOfRaces; ++i) {
-            int newPassageLength = TypingRace.generateRandomPassageLength();
-            setPassageLength(newPassageLength);
-            //ingore two lines of code above
-            //configureRace(); -> returns number of typists
-            //customiseTypists(numberTypists);
-            startRace();
-        }
+//        final int numberOfRaces = inputNumberRaces();
+//        for (int i = 1; i <= numberOfRaces; ++i) {
+//            int newPassageLength = TypingRace.generateRandomPassageLength();
+//            setPassageLength(newPassageLength);
+//            //ingore two lines of code above
+//            //configureRace(); -> returns number of typists
+//            //customiseTypists(numberTypists);
+//            startRace();
+//        }
     }
 
     /**
