@@ -76,84 +76,84 @@ public class GuiTypingRace
      * Note from Ty: "I didn't bother printing the winner at the end,
      * you can probably figure that out yourself."
      */
-    public static void startRace()
-    {
-        boolean finished = false;
-
-        // Reset all typists to the start of the passage
-        // (Ty was in a hurry here)
-        seat1Typist.resetToStart();
-        seat2Typist.resetToStart();
-        seat3Typist.resetToStart();
-        while (!finished)
-        {
-            // Advance each typist by one turn
-            advanceTypist(seat1Typist);
-            advanceTypist(seat2Typist);
-            advanceTypist(seat3Typist);
-
-            // Print the current state of the race
-            printRace();
-
-            // Check if any typist has finished the passage
-            if ( raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist) )
-            {
-                finished = true;
-            }
-
-            // Wait 200ms between turns so the animation is visible
-            try {
-                TimeUnit.MILLISECONDS.sleep(200);
-            } catch (Exception e) {}
-        }
-
-        // TODO (Task 2a): Print the winner's name here
-        Typist [] arrayTypist = {seat1Typist, seat2Typist, seat3Typist};
-        Typist [] possibleWinners = new Typist[3];
-
-        int countOne = 0;
-        int countTwo = 0;
-        while (countOne < arrayTypist.length) {
-            if (arrayTypist[countOne].getProgress() >= passageLength) {
-                possibleWinners[countTwo] = arrayTypist[countOne];
-                countTwo += 1;
-            }
-            countOne+=1;
-        }
-
-        ArrayList<Typist> winners = new ArrayList<Typist>(3);
-        winners.add(possibleWinners[0]);
-
-        int maxValue = possibleWinners[0].getProgress();
-
-        for (int i = 1; i < countTwo; ++i) {
-
-            if (possibleWinners[i].getProgress() > maxValue) {
-                winners.clear();
-                maxValue = possibleWinners[i].getProgress();
-                winners.add(possibleWinners[i]);
-            }
-
-            else if (possibleWinners[i].getProgress() == maxValue) {
-                winners.add(possibleWinners[i]);
-            }
-        }
-
-        //need to update the accuracy of the winners accordingly:
-        //
-        for (int i = 0; i < winners.size(); ++i) {
-            winners.get(i).setPreviousAccuracy();
-            winners.get(i).setAccuracy(winners.get(i).getAccuracy() + 0.1);
-        }
-        //now need to get the name of winners
-        //
-        System.out.println("And the winner(s) is/are:... ");
-        for (int i = 0; i < winners.size(); ++i) {
-            System.out.print(winners.get(i).getName());
-            System.out.println(": Final Accuracy: " + winners.get(i).getAccuracy() + " (improved from " +
-                    winners.get(i).getPreviousAccuracy() + " )");
-            System.out.println(" ");
-        }
+//    public static void startRace()
+//    {
+//        boolean finished = false;
+//
+//        // Reset all typists to the start of the passage
+//        // (Ty was in a hurry here)
+//        seat1Typist.resetToStart();
+//        seat2Typist.resetToStart();
+//        seat3Typist.resetToStart();
+//        while (!finished)
+//        {
+//            // Advance each typist by one turn
+//            advanceTypist(seat1Typist);
+//            advanceTypist(seat2Typist);
+//            advanceTypist(seat3Typist);
+//
+//            // Print the current state of the race
+//            printRace();
+//
+//            // Check if any typist has finished the passage
+//            if ( raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist) )
+//            {
+//                finished = true;
+//            }
+//
+//            // Wait 200ms between turns so the animation is visible
+//            try {
+//                TimeUnit.MILLISECONDS.sleep(200);
+//            } catch (Exception e) {}
+//        }
+//
+//        // TODO (Task 2a): Print the winner's name here
+//        Typist [] arrayTypist = {seat1Typist, seat2Typist, seat3Typist};
+//        Typist [] possibleWinners = new Typist[3];
+//
+//        int countOne = 0;
+//        int countTwo = 0;
+//        while (countOne < arrayTypist.length) {
+//            if (arrayTypist[countOne].getProgress() >= passageLength) {
+//                possibleWinners[countTwo] = arrayTypist[countOne];
+//                countTwo += 1;
+//            }
+//            countOne+=1;
+//        }
+//
+//        ArrayList<Typist> winners = new ArrayList<Typist>(3);
+//        winners.add(possibleWinners[0]);
+//
+//        int maxValue = possibleWinners[0].getProgress();
+//
+//        for (int i = 1; i < countTwo; ++i) {
+//
+//            if (possibleWinners[i].getProgress() > maxValue) {
+//                winners.clear();
+//                maxValue = possibleWinners[i].getProgress();
+//                winners.add(possibleWinners[i]);
+//            }
+//
+//            else if (possibleWinners[i].getProgress() == maxValue) {
+//                winners.add(possibleWinners[i]);
+//            }
+//        }
+//
+//        //need to update the accuracy of the winners accordingly:
+//        //
+//        for (int i = 0; i < winners.size(); ++i) {
+//            winners.get(i).setPreviousAccuracy();
+//            winners.get(i).setAccuracy(winners.get(i).getAccuracy() + 0.1);
+//        }
+//        //now need to get the name of winners
+//        //
+//        System.out.println("And the winner(s) is/are:... ");
+//        for (int i = 0; i < winners.size(); ++i) {
+//            System.out.print(winners.get(i).getName());
+//            System.out.println(": Final Accuracy: " + winners.get(i).getAccuracy() + " (improved from " +
+//                    winners.get(i).getPreviousAccuracy() + " )");
+//            System.out.println(" ");
+//        }
 
 
     }
