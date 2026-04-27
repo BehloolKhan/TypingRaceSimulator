@@ -12,8 +12,7 @@ public class GuiTypingRace
 {
     private static int passageLength;   //replace this with a passage object which contains length and actual passage
     //should replace this with an array of length 6
-    private GuiTypist [] guiTypists;
-
+    private static GuiTypist [] guiTypists;
 
     // Accuracy thresholds for mistype and burnout events
     // (Ty tuned these values "by feel". They may need adjustment.)
