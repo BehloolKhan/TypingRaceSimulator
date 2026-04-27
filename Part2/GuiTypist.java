@@ -43,4 +43,20 @@ public class GuiTypist extends Typist{
             this.Accessory = "Wrist Support";
         }
     }
+
+    protected String getTypingStyle() {
+        return this.TypingStyle;
+    }
+
+    protected String getKeyBoardType() {
+        return this.KeyBoardType;
+    }
+
+    protected String getColour() {
+        return this.colour;
+    }
+
+    protected String getAccessory() {
+        return this.Accessory;
+    }
 }
