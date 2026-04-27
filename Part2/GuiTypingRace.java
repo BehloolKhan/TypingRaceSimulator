@@ -421,7 +421,7 @@ public class GuiTypingRace
         GuiTypingRace.frame.add(buttonsPanel);
         GuiTypingRace.frame.add(GuiTypingRace.mainPanel);
 
-        GuiTypingRace.frame.setSize(300, 300);
+        GuiTypingRace.frame.setSize(900, 900);
         GuiTypingRace.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close when we press X button
         GuiTypingRace.frame.setVisible(true); //make sure the frame is displayed.
     }
