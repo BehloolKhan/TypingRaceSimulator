@@ -267,52 +267,52 @@ public class GuiTypingRace
      *
      * @param theTypist the typist whose lane to print
      */
-    public static void printSeat(Typist theTypist)
-    {
-        int spacesBefore = theTypist.getProgress();
-        int spacesAfter  = passageLength - theTypist.getProgress();
-
-        System.out.print('|');
-        multiplePrint(' ', spacesBefore);
-
-        // Always show the typist's symbol so they can be identified on screen.
-        // Append ~ when burnt out so the state is visible without hiding identity.
-        System.out.print(theTypist.getSymbol());
-        if (theTypist.isBurntOut())
-        {
-            System.out.print('~');
-            spacesAfter--; // symbol + ~ together take two characters
-        }
-
-        if (theTypist.hasMistyped()) {
-            System.out.print("[<]");
-            spacesAfter-=3; //[<] = 3 characters
-
-        }
-
-        multiplePrint(' ', spacesAfter);
-        System.out.print('|');
-        System.out.print(' ');
-
-        // Print name and accuracy
-        if (theTypist.isBurntOut())
-        {
-            System.out.print(theTypist.getName()
-                    + " (Accuracy: " + theTypist.getAccuracy() + ")"
-                    + " BURNT OUT (" + theTypist.getBurnoutTurnsRemaining() + " turns)");
-        }
-        else if (theTypist.hasMistyped()) {
-            System.out.print(theTypist.getName()
-                    + " (Accuracy: " + theTypist.getAccuracy() + ")"
-                    + " <- just mistyped");
-            theTypist.exitMistyped(); //exit state
-        }
-        else
-        {
-            System.out.print(theTypist.getName()
-                    + " (Accuracy: " + theTypist.getAccuracy() + ")");
-        }
-    }
+//    public static void printSeat(Typist theTypist)
+//    {
+//        int spacesBefore = theTypist.getProgress();
+//        int spacesAfter  = passageLength - theTypist.getProgress();
+//
+//        System.out.print('|');
+//        multiplePrint(' ', spacesBefore);
+//
+//        // Always show the typist's symbol so they can be identified on screen.
+//        // Append ~ when burnt out so the state is visible without hiding identity.
+//        System.out.print(theTypist.getSymbol());
+//        if (theTypist.isBurntOut())
+//        {
+//            System.out.print('~');
+//            spacesAfter--; // symbol + ~ together take two characters
+//        }
+//
+//        if (theTypist.hasMistyped()) {
+//            System.out.print("[<]");
+//            spacesAfter-=3; //[<] = 3 characters
+//
+//        }
+//
+//        multiplePrint(' ', spacesAfter);
+//        System.out.print('|');
+//        System.out.print(' ');
+//
+//        // Print name and accuracy
+//        if (theTypist.isBurntOut())
+//        {
+//            System.out.print(theTypist.getName()
+//                    + " (Accuracy: " + theTypist.getAccuracy() + ")"
+//                    + " BURNT OUT (" + theTypist.getBurnoutTurnsRemaining() + " turns)");
+//        }
+//        else if (theTypist.hasMistyped()) {
+//            System.out.print(theTypist.getName()
+//                    + " (Accuracy: " + theTypist.getAccuracy() + ")"
+//                    + " <- just mistyped");
+//            theTypist.exitMistyped(); //exit state
+//        }
+//        else
+//        {
+//            System.out.print(theTypist.getName()
+//                    + " (Accuracy: " + theTypist.getAccuracy() + ")");
+//        }
+//    }
 
     /**
      * Prints a character a given number of times.
