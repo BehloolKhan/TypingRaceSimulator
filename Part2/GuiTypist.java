@@ -29,4 +29,10 @@ public class GuiTypist extends Typist{
         this.KeyBoardType = keyBoard;
     }
 
+    protected void setColour(String colour_) {
+        this.colour = colour_;
+        if (colour_.equals("")) {
+            this.colour = "red";
+        }
+    }
 }
