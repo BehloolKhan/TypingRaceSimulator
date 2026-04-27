@@ -192,7 +192,7 @@ public class GuiTypingRace
 
         if ( Math.random() <= ( (1.0 - theTypist.getAccuracy() ) * GuiTypingRace.MISTYPE_BASE_CHANCE ) )
         {
-            theTypist.slideBack(SLIDE_BACK_AMOUNT);
+            theTypist.slideBack(GuiTypingRace.SLIDE_BACK_AMOUNT);
             theTypist.setMistyped();
 
         }
