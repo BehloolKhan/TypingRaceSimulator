@@ -391,4 +391,36 @@ public class GuiTypingRace
                     "DEFAULT", "red", "DEFAULT");
         }
     }
+
+    public void displayFrame() {
+        //let's add the buttons
+        //
+        frame = new JFrame("Typing Race competition: ");
+        frame.setLayout(new BoxLayout(frame, BoxLayout.Y_AXIS));
+
+        //Now the buttons panel
+        //
+        JPanel buttonsPanel = new JPanel();
+        buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.X_AXIS));
+
+        //Now let's add the buttons
+        //
+        JButton raceButton = new JButton("Configure Race");
+        JButton typistButton = new JButton("customiseTypists");
+        JButton performanceButton = new JButton("view typists performance");
+
+        buttonsPanel.add(raceButton);
+        buttonsPanel.add(typistButton);
+        buttonsPanel.add(performanceButton);
+
+        mainPanel = new JPanel();
+        mainPanel.setSize(100, 100);
+
+        frame.add(buttonsPanel);
+        frame.add(mainPanel);
+
+        frame.setSize(300, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close when we press X button
+        frame.setVisible(true); //make sure the frame is displayed.
+    }
 }
