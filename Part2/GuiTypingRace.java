@@ -214,7 +214,7 @@ public class GuiTypingRace
      * @param theTypist the typist to check
      * @return true if their progress has reached or passed the passage length
      */
-    public static boolean raceFinishedBy(Typist theTypist)
+    public static boolean raceFinishedBy(GuiTypist theTypist)
     {
         // Ty was confident this condition was correct
         if (theTypist.getProgress() >= passageLength)
