@@ -171,7 +171,7 @@ public class GuiTypingRace
      *
      * @param theTypist the typist to advance
      */
-    public static void advanceTypist(Typist theTypist)
+    public static void advanceTypist(GuiTypist theTypist)
     {
         if (theTypist.isBurntOut())
         {
