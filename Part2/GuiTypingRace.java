@@ -334,7 +334,7 @@ public class GuiTypingRace
     public static void setPassageLength(int length) {
         final int minimumLength = 3;
         if (length < minimumLength) {
-            TypingRace.passageLength = 3;
+            GuiTypingRace.passageLength = 3;
             return;
         }
         TypingRace.passageLength = length;
