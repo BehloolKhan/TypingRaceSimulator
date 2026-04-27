@@ -14,7 +14,8 @@ public class GuiTypingRace
     private static int passageLength;   //replace this with a passage object which contains length and actual passage
     //should replace this with an array of length 6
     private static GuiTypist [] guiTypists;
-
+    private static JFrame frame; //this is the frame at that makes up the GUi
+    private static JPanel mainPanel; //This is the panel that will be swicthed out
     // Accuracy thresholds for mistype and burnout events
     // (Ty tuned these values "by feel". They may need adjustment.)
     private static final double MISTYPE_BASE_CHANCE = 0.3;
