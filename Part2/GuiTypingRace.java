@@ -337,7 +337,7 @@ public class GuiTypingRace
             GuiTypingRace.passageLength = 3;
             return;
         }
-        TypingRace.passageLength = length;
+        GuiTypingRace.passageLength = length;
     }
 
     //used to generate random passage length;
