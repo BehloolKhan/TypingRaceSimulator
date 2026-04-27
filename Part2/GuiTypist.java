@@ -59,4 +59,16 @@ public class GuiTypist extends Typist{
     protected String getAccessory() {
         return this.Accessory;
     }
+
+    public GuiTypist(char typistSymbol, String typistName, double typistAccuracy, String typingStyle,
+                     String keyBoardType, String colour, String Accessory) {
+
+        super(typistSymbol, typistName, typistAccuracy);
+
+        setAccessories(Accessory);
+        setColour(colour);
+        setKeyBoardType(keyBoardType);
+        setTypingStyle(typingStyle);
+        
+    }
 }
