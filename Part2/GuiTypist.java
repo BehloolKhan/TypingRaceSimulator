@@ -35,4 +35,12 @@ public class GuiTypist extends Typist{
             this.colour = "red";
         }
     }
+
+    protected void setAccessories(String Accessory) {
+        this.Accessory = Accessory;
+        if (!(Accessory.equals("Wrist Support") || Accessory.equals("Energy Drink") ||
+                Accessory.equals("Noise-Cancelling"))) {
+            this.Accessory = "Wrist Support";
+        }
+    }
 }
