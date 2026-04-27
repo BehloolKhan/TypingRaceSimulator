@@ -27,7 +27,7 @@ public class GuiTypingRace
     public static void main (String[] args) {
 
         //we add the 6 typists to the array
-        initaliseTypists();
+        initialiseTypists();
 
         final int numberOfRaces = inputNumberRaces();
         for (int i = 1; i <= numberOfRaces; ++i) {
