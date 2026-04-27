@@ -17,6 +17,8 @@ I need to make sure this Read me file includes precise
 instructions on how to compile and run my code correctly given 
 my package structure so that processor can compile and run code
 without difficulties
+* The zip folder came with a reade me file -> use that aswell
+* get contents from that read me file into yours
 
 ### compilation of files:
 * `chcp 65001` - windows
