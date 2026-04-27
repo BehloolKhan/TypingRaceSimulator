@@ -418,8 +418,8 @@ public class GuiTypingRace
         mainPanel = new JPanel();
         mainPanel.setSize(100, 100);
 
-        frame.add(buttonsPanel);
-        frame.add(mainPanel);
+        GuiTypingRace.frame.add(buttonsPanel);
+        GuiTypingRace.frame.add(GuiTypingRace.mainPanel);
 
         frame.setSize(300, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close when we press X button
