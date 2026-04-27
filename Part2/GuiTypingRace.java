@@ -201,7 +201,7 @@ public class GuiTypingRace
         // (probability scales with accuracy squared, capped at ~0.05)
         if (Math.random() < 0.05 * theTypist.getAccuracy() * theTypist.getAccuracy())
         {
-            theTypist.burnOut(BURNOUT_DURATION);
+            theTypist.burnOut(GuiTypingRace.BURNOUT_DURATION);
             //need to slightly decrease it
             theTypist.setPreviousAccuracy();
             theTypist.setAccuracy(theTypist.getAccuracy() - 0.05);
