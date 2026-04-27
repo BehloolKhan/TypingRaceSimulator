@@ -415,8 +415,8 @@ public class GuiTypingRace
         buttonsPanel.add(typistButton);
         buttonsPanel.add(performanceButton);
 
-        mainPanel = new JPanel();
-        mainPanel.setSize(100, 100);
+        GuiTypingRace.mainPanel = new JPanel();
+        GuiTypingRace.mainPanel.setSize(100, 100);
 
         GuiTypingRace.frame.add(buttonsPanel);
         GuiTypingRace.frame.add(GuiTypingRace.mainPanel);
