@@ -234,26 +234,26 @@ public class GuiTypingRace
      * and a WPM estimate based on current progress.
      */
     public static void printRace()
-    {
-        System.out.print('\u000C'); // Clear terminal
-
-        System.out.println("  TYPING RACE — passage length: " + passageLength + " chars");
-        multiplePrint('=', passageLength + 3);
-        System.out.println();
-
-        printSeat(seat1Typist);
-        System.out.println();
-
-        printSeat(seat2Typist);
-        System.out.println();
-
-        printSeat(seat3Typist);
-        System.out.println();
-
-        multiplePrint('=', passageLength + 3);
-        System.out.println();
-        System.out.println("  [~] = burnt out    [<] = just mistyped");
-    }
+//    {
+//        System.out.print('\u000C'); // Clear terminal
+//
+//        System.out.println("  TYPING RACE — passage length: " + passageLength + " chars");
+//        multiplePrint('=', passageLength + 3);
+//        System.out.println();
+//
+//        printSeat(seat1Typist);
+//        System.out.println();
+//
+//        printSeat(seat2Typist);
+//        System.out.println();
+//
+//        printSeat(seat3Typist);
+//        System.out.println();
+//
+//        multiplePrint('=', passageLength + 3);
+//        System.out.println();
+//        System.out.println("  [~] = burnt out    [<] = just mistyped");
+//    }
 
     /**
      * Prints a single typist's lane.
