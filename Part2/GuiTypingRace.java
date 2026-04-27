@@ -7,6 +7,7 @@ import java.lang.Math;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
+import javax.swing.*; // will need this module for our GUI
 
 public class GuiTypingRace
 {
