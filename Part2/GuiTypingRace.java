@@ -25,9 +25,7 @@ public class GuiTypingRace
     public static void main (String[] args) {
 
         //we add the 6 typists to the array
-        addTypist(new Typist('\u2460', "TurboFingers", 0.5), 1);
-        addTypist(new Typist('\u2461', "QWERTY_QUEEN", 0.5), 2);
-        addTypist(new Typist('\u2462', "HUNT_N_PECK", 0.5), 3);
+        initaliseTypists();
 
         final int numberOfRaces = inputNumberRaces();
         for (int i = 1; i <= numberOfRaces; ++i) {
