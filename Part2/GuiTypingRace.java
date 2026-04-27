@@ -394,7 +394,7 @@ public class GuiTypingRace
         }
     }
 
-    public void displayFrame() {
+    public static void displayFrame() {
         //let's add the buttons
         //
         frame = new JFrame("Typing Race competition: ");
