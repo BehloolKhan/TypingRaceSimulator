@@ -397,8 +397,8 @@ public class GuiTypingRace
     public static void displayFrame() {
         //let's add the buttons
         //
-        frame = new JFrame("Typing Race competition: ");
-        frame.setLayout(new BoxLayout(frame, BoxLayout.Y_AXIS));
+        GuiTypingRace.frame = new JFrame("Typing Race competition: ");
+        GuiTypingRace.frame.setLayout(new BoxLayout(GuiTypingRace.frame, BoxLayout.Y_AXIS));
 
         //Now the buttons panel
         //
