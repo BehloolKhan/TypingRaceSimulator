@@ -384,6 +384,11 @@ public class GuiTypingRace
     //method to initialise typists before all possible future games:
     //
     public static void initaliseTypists() {
-
+        GuiTypingRace.guiTypists = new GuiTypist[6];
+        String [] names = {"TURBO_FINGERS", "QWERTY_QUEEN", "HUNT_N_PECK", "MCQUEEN", "BOBBY", "JAMES"};
+        for (int i = 0; i < 6; ++i) {
+            GuiTypingRace.guiTypists[i] = new GuiTypist('T', names[i], 0.5, "DEFAULT",
+                    "DEFAULT", "red", "DEFAULT");
+        }
     }
 }
