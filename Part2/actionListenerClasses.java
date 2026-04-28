@@ -97,11 +97,12 @@ class SubmitButtonListener implements ActionListener {
     private String passageSelected;
     private Integer numberOfRaces;
 
-    private boolean autoCorrect;
-    private boolean caffeineMode;
-    private boolean NightShift;
-    SubmitButtonListener() {
+    private JCheckBox autoCorrect;
+    private JCheckBox caffeineMode;
+    private JCheckBox NightShift;
 
+    SubmitButtonListener(JList<String> passages) {
+        
     }
 
     @Override
