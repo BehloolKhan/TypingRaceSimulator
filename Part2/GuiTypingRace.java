@@ -37,8 +37,8 @@ class ConfigureRace implements ActionListener
 
     public void configureRace() {
 
-        String [] Passages = GuiTypingRace.getPassages().toArray(new String [0]);
-        JList<String> currentPassages = new JList<>(Passages);
+
+        JList<String> currentPassages = new JList<>(GuiTypingRace.getPassages());
 
         JScrollPane scrollPassages = new JScrollPane(currentPassages);
         this.mainPanel.add(scrollPassages);
