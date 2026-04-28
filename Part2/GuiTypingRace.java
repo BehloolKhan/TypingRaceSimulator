@@ -92,7 +92,7 @@ class submitPassage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String passage = this.textArea.getText();
-        passage = passage.replaceAll("\\r?\\n", ""); //including new line character for both windows and Unix
+        passage = passage.replaceAll("\\r?\\n", " "); //including new line character for both windows and Unix
 
         GuiTypingRace.getPassages().addElement(passage);
     }
