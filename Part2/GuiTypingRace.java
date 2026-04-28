@@ -84,8 +84,7 @@ class ConfigureRace implements ActionListener
 class SubmitPassageListener implements ActionListener {
     //going to need a pointer to the TextArea object because we need to grab the information from it
     private JTextArea textArea;
-
-    public submitPassage(JTextArea textArea_) {
+    public SubmitPassageListener(JTextArea textArea_) {
         this.textArea = textArea_;
 
     }
