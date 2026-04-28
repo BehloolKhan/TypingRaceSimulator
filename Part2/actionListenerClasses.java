@@ -95,7 +95,11 @@ class SubmitPassageListener implements ActionListener {
 
 class SubmitButtonListener implements ActionListener {
     private String passageSelected;
+    private Integer numberOfRaces;
 
+    private boolean autoCorrect;
+    private boolean caffeineMode;
+    private boolean NightShift;
     SubmitButtonListener() {
 
     }
