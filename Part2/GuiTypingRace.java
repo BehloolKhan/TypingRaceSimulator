@@ -476,7 +476,7 @@ public class GuiTypingRace
 
         passages = new ArrayList<>(3);
 
-        passages.add(new Passage("The quick brown fox jumps over dog.", 34));
+        passages.add(new Passage("The quick brown fox jumps over dog.", 35));
         passages.add(new Passage("Mountains stand tall under blue skies.", 38));
         passages.add(new Passage("Rain falls softly on the green grass.", 37));
         
