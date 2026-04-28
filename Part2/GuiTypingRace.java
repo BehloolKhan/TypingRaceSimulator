@@ -95,6 +95,7 @@ class submitPassage implements ActionListener {
         passage = passage.replaceAll("\\r?\\n", " "); //including new line character for both windows and Unix
 
         GuiTypingRace.getPassages().addElement(passage);
+        this.textArea.setText("");
     }
 }
 
