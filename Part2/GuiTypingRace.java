@@ -444,6 +444,11 @@ public class GuiTypingRace
         JButton typistButton = new JButton("customiseTypists");
         JButton performanceButton = new JButton("view typists performance");
 
+        //adding actionListeners for each of the buttons
+        //
+        ConfigureRace raceButtonListener = new ConfigureRace(GuiTypingRace.frame);
+        raceButton.addActionListener(raceButtonListener);
+
         buttonsPanel.add(raceButton);
         buttonsPanel.add(typistButton);
         buttonsPanel.add(performanceButton);
