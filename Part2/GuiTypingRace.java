@@ -471,4 +471,14 @@ public class GuiTypingRace
         GuiTypingRace.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close when we press X button
         GuiTypingRace.frame.setVisible(true); //make sure the frame is displayed.
     }
+
+    public static void setStarterPassages() {
+
+        passages = new ArrayList<>(3);
+
+        passages.add(new Passage("The quick brown fox jumps over dog.", 34));
+        passages.add(new Passage("Mountains stand tall under blue skies.", 38));
+        passages.add(new Passage("Rain falls softly on the green grass.", 37));
+        
+    }
 }
