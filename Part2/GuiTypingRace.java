@@ -46,6 +46,11 @@ class ConfigureRace implements ActionListener
         JTextArea newPassage = new JTextArea(2, 21); //making sure max passage length is 42
         JButton submitPassage = new JButton("Submit New Passage");
 
+        //adding actionListener object to submitPassage
+        //
+        SubmitPassageListener buttonListener = new SubmitPassageListener(newPassage);
+        submitPassage.addActionListener(buttonListener);
+
         this.mainPanel.add(button);
         this.mainPanel.add(newPassage);
         this.mainPanel.add(submitPassage);
