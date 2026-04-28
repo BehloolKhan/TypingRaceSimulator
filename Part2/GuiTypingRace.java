@@ -43,8 +43,16 @@ class ConfigureRace implements ActionListener
         JScrollPane scrollPassages = new JScrollPane(currentPassages);
         this.mainPanel.add(scrollPassages);
 
-        this.mainPanel.revalidate();
-        this.mainPanel.repaint();
+        JButton button = new JButton("Add New passage");
+        JTextArea newPassage = new JTextArea();
+        JButton submitPassage = new JButton("Submit New Passage");
+
+        this.mainPanel.add(button);
+        this.mainPanel.add(newPassage);
+        this.mainPanel.add(submitPassage);
+
+        this.mainPanel.revalidate(); //making sure the panel updates
+        this.mainPanel.repaint(); //making sure its redrawn
     };
     //Flow of configureRace:
     //display Frame -> This is another method
