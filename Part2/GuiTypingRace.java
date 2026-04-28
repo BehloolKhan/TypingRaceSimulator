@@ -81,7 +81,7 @@ class ConfigureRace implements ActionListener
 
 //The following class will deal with what should happen when the corresponding UI
 //
-class submitPassage implements ActionListener {
+class SubmitPassageListener implements ActionListener {
     //going to need a pointer to the TextArea object because we need to grab the information from it
     private JTextArea textArea;
 
