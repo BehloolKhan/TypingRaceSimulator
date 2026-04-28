@@ -30,7 +30,11 @@ import javax.swing.*; // will need this module for our GUI
 
 public class GuiTypingRace
 {
-    private static ArrayList<Passage> passages;   //This will store information about all passages
+    private static DefaultListModel<String> passages;   //This will store information about all passages
+
+    private static String currentPassage;//used to keep track of the current length of passage
+    private static int passageLength; //used to keep track of the length of current passage
+    private static int currentNumberOfPlayers; 
 
     private static GuiTypist [] guiTypists;
     private static JFrame frame; //this is the frame at that makes up the GUi
