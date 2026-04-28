@@ -92,3 +92,4 @@ class SubmitPassageListener implements ActionListener {
         this.textArea.setText("");
     }
 }
+
