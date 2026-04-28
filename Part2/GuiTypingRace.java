@@ -9,6 +9,39 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import javax.swing.*; // will need this module for our GUI
 
+//The following will contain the classes used to perform the actions when the buttons are clicked
+//lets start off with the class used for the ConfigureRace button
+//
+class ConfigureRace implements ActionListener
+{
+    private JFrame parentFrame;
+
+    public ConfigureRace(JFrame parentFrame_,) {
+        this.parentFrame = parentFrame_;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //accessing the components of the parentFrame
+        //
+        for (Component object: this.parentFrame.getContentPane().getComponents()) {
+            System.out.println(object);
+        }
+
+        //configureRace():
+        //Flow of configureRace:
+        //display Frame -> This is another method
+        //grab all information -> (event method) we probably do it by adding event listener to button which does all the
+        //      Passage selected: -> then set it
+        //      number of typists -> return value
+        //      difficulty modifiers -> we will represent as a record:
+        //                              fieldOne = tells us if its on/off
+        //                              fieldTwo = value to adjust one of the slideBack or progress step by or accuracy
+        // each difficulty modifier will be set as a field
+        //return number of typists they want
+    }
+}
+
 public class GuiTypingRace
 {
     private static int passageLength;   //replace this with a passage object which contains length and actual passage
