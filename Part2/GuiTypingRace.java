@@ -2,6 +2,9 @@ package Part2;
 //This will host the GUI for my typing race
 //
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 import java.lang.Math;
 import java.util.Random;
