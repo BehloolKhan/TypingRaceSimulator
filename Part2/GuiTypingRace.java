@@ -485,5 +485,7 @@ public class GuiTypingRace
 
     }
 
-
+    public static ArrayList<String> getPassages() {
+        return GuiTypingRace.passages;
+    }
 }
