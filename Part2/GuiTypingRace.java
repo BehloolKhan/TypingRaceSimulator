@@ -489,6 +489,7 @@ public class GuiTypingRace
 
         GuiTypingRace.mainPanel = new JPanel();
         GuiTypingRace.mainPanel.setSize(100, 100);
+        GuiTypingRace.mainPanel.setLayout(new BoxLayout(GuiTypingRace.mainPanel, BoxLayout.Y_AXIS)); 
 
         GuiTypingRace.frame.add(buttonsPanel);
         GuiTypingRace.frame.add(GuiTypingRace.mainPanel);
