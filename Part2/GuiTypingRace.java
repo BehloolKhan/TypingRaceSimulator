@@ -19,13 +19,6 @@ import javax.swing.*; // will need this module for our GUI
     
 }
 
-//The following class will deal with what should happen when the corresponding UI
-//
-class SubmitPassageListener implements ActionListener {
-    //going to need a pointer to the TextArea object because we need to grab the information from it
-    private JTextArea textArea;
-    public SubmitPassageListener(JTextArea textArea_) {
-        this.textArea = textArea_;
 
     }
     @Override
