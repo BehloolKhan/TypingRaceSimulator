@@ -42,6 +42,9 @@ class ConfigureRace implements ActionListener
     }
 }
 
+//record to hold information about a passage such as its length and contents
+record Passage(String content, int length) {};
+
 public class GuiTypingRace
 {
     private static int passageLength;   //replace this with a passage object which contains length and actual passage
