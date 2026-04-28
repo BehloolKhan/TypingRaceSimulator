@@ -93,3 +93,21 @@ class SubmitPassageListener implements ActionListener {
     }
 }
 
+class SubmitButtonListener implements ActionListener {
+    private String passageSelected;
+
+    SubmitButtonListener() {
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //what is the purpose of this event
+        //we need to grab the passage selected
+        //The number of races selected
+        //The check boxes
+
+        //set the values in GuiTypingRace to corresponding values
+    }
+}
+
