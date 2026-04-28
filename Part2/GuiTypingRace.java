@@ -508,7 +508,7 @@ public class GuiTypingRace
 
     public static void setStarterPassages() {
 
-        passages = new ArrayList<>(3);
+        passages = new DefaultListModel<>();
 
         passages.add("The quick brown fox jumps over dog.");
         passages.add("Mountains stand tall under blue skies.");
