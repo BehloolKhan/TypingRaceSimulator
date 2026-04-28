@@ -80,6 +80,16 @@ class submitPassage implements ActionListener {
     //going to need a pointer to the TextArea object because we need to grab the information from it
     private JTextArea textArea;
 
+    public submitPassage(JTextArea textArea_) {
+        this.textArea = textArea_;
+
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String passage = this.textArea.getText();
+        passage = passage.replaceAll("\\r?\\n", ""); //
+    }
+}
 
 
 public class GuiTypingRace
