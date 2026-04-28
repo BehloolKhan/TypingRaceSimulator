@@ -58,6 +58,11 @@ public class GuiTypingRace
     private static final int    SLIDE_BACK_AMOUNT   = 1; //might need to change to 2 since it could be halved
     private static final int    BURNOUT_DURATION     = 3;
 
+    //following contains modes that Can be applied to everyone
+    //
+    private boolean autoCorrectOn; // used to track weather auto-correct is on or off
+    private boolean caffeineMode; // used to track weather caffeineMode is on or off
+    private boolean NightShift; //used to keep track of weather Night shift is on or off
 
 
     public static void main (String[] args) {
