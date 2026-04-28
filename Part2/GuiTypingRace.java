@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 import java.lang.Math;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.ArrayList;
 import javax.swing.*; // will need this module for our GUI
 
 
