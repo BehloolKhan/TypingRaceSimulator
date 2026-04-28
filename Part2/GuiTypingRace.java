@@ -72,18 +72,7 @@ class ConfigureRace implements ActionListener
         this.mainPanel.revalidate(); //making sure the panel updates
         this.mainPanel.repaint(); //making sure its redrawn
     };
-    //Flow of configureRace:
-    //display Frame -> This is another method
-    //grab all information -> (event method) we probably do it by adding event listener to button which does all the
-    //      Passage selected: -> then set it
-    //      number of typists -> return value
-    //      difficulty modifiers -> we will represent as a record:
-    //                              fieldOne = tells us if its on/off
-    //                              fieldTwo = value to adjust one of the slideBack or progress step by or accuracy
-    // each difficulty modifier will be set as a field
-    //return number of typists they want
-
-
+    
 }
 
 
