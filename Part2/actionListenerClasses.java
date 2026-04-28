@@ -101,8 +101,16 @@ class SubmitButtonListener implements ActionListener {
     private JCheckBox caffeineMode;
     private JCheckBox NightShift;
 
-    SubmitButtonListener(JList<String> passages) {
-        
+    SubmitButtonListener(JList<String> passages_, JComboBox typists_, JCheckBox autoCorrect_,
+                         JCheckBox caffeineMode_, JCheckBox NightShift_) {
+
+        this.passages = passages_;
+        this.typists = typists_;
+
+        this.autoCorrect = autoCorrect_;
+        this.caffeineMode = caffeineMode_;
+        this.NightShift = NightShift_;
+
     }
 
     @Override
