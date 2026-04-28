@@ -31,18 +31,26 @@ class ConfigureRace implements ActionListener
         this.mainPanel = (JPanel) mainPanel;
     }
 
-        //configureRace():
-        //Flow of configureRace:
-        //display Frame -> This is another method
-        //grab all information -> (event method) we probably do it by adding event listener to button which does all the
-        //      Passage selected: -> then set it
-        //      number of typists -> return value
-        //      difficulty modifiers -> we will represent as a record:
-        //                              fieldOne = tells us if its on/off
-        //                              fieldTwo = value to adjust one of the slideBack or progress step by or accuracy
-        // each difficulty modifier will be set as a field
-        //return number of typists they want
-    }
+    public void configureRace() {
+
+        String [] Passages = GuiTypingRace.getPassages().toArray(new String [0]);
+        JList<String> currentPassages = new JList<>(Passages);
+
+        JScrollPane scrollPassages = new JScrollPane(currentPassages);
+        
+    };
+    //Flow of configureRace:
+    //display Frame -> This is another method
+    //grab all information -> (event method) we probably do it by adding event listener to button which does all the
+    //      Passage selected: -> then set it
+    //      number of typists -> return value
+    //      difficulty modifiers -> we will represent as a record:
+    //                              fieldOne = tells us if its on/off
+    //                              fieldTwo = value to adjust one of the slideBack or progress step by or accuracy
+    // each difficulty modifier will be set as a field
+    //return number of typists they want
+
+
 }
 
 
