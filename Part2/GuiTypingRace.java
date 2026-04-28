@@ -18,6 +18,8 @@ import javax.swing.*; // will need this module for our GUI
 class ConfigureRace implements ActionListener
 {
     private JFrame parentFrame;
+    private JPanel mainPanel;
+    private boolean ButtonClicked = false;
 
     public ConfigureRace(JFrame parentFrame_) {
         this.parentFrame = parentFrame_;
