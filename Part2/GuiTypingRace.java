@@ -39,7 +39,10 @@ class ConfigureRace implements ActionListener
         JList<String> currentPassages = new JList<>(Passages);
 
         JScrollPane scrollPassages = new JScrollPane(currentPassages);
-        
+        this.mainPanel.add(scrollPassages);
+
+        this.mainPanel.revalidate();
+        this.mainPanel.repaint();
     };
     //Flow of configureRace:
     //display Frame -> This is another method
