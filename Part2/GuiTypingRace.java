@@ -16,7 +16,7 @@ class ConfigureRace implements ActionListener
 {
     private JFrame parentFrame;
 
-    public ConfigureRace(JFrame parentFrame_,) {
+    public ConfigureRace(JFrame parentFrame_) {
         this.parentFrame = parentFrame_;
     }
 
