@@ -473,4 +473,12 @@ public class GuiTypingRace
     public static ArrayList<String> getPassages() {
         return GuiTypingRace.passages;
     }
+
+    public static void setDifficultyModifiers(boolean autoCorrect_, boolean caffeineMode_, boolean nightShift_) {
+        GuiTypingRace.autoCorrectOn = autoCorrect_;
+        GuiTypingRace.caffeineMode = caffeineMode_;
+        GuiTypingRace.nightShift = nightShift_;
+    }
+
+    public static void setPassageInfo()
 }
