@@ -29,6 +29,8 @@ class ConfigureRace implements ActionListener
         //The parent Frame has two components, the second is the mainPanel
         Component mainPanel = this.parentFrame.getContentPane().getComponent(1);
         this.mainPanel = (JPanel) mainPanel;
+
+        configureRace();
     }
 
     public void configureRace() {
