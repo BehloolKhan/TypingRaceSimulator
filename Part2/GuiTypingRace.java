@@ -23,10 +23,10 @@ class ConfigureRace implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         //accessing the components of the parentFrame
-        //
-        for (Component object: this.parentFrame.getContentPane().getComponents()) {
-            System.out.println(object);
-        }
+        //The parent Frame has two components, the second is the mainPanel
+        Component mainPanel = this.parentFrame.getContentPane().getComponent(1);
+        this.mainPanel = (JPanel) mainPanel;
+    }
 
         //configureRace():
         //Flow of configureRace:
