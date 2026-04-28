@@ -485,5 +485,5 @@ public class GuiTypingRace
 
     }
 
-    
+
 }
