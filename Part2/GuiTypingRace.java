@@ -480,7 +480,7 @@ public class GuiTypingRace
         GuiTypingRace.nightShift = nightShift_;
     }
 
-    public static void setPassageInfo(String passage_, int passageLength_) {
+    public static void setPassageInfo(String passage_) {
         GuiTypingRace.currentPassage = passage_;
         GuiTypingRace.passageLength = passageLength_;
     }
