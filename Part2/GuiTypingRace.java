@@ -12,66 +12,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import javax.swing.*; // will need this module for our GUI
 
-//The following will contain the classes used to perform the actions when the buttons are clicked
-//lets start off with the class used for the ConfigureRace button
-//
-class ConfigureRace implements ActionListener
-{
-    private JFrame parentFrame;
-    private JPanel mainPanel;
-
-
-    public ConfigureRace(JFrame parentFrame_) {
-        this.parentFrame = parentFrame_;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        //accessing the components of the parentFrame
-        //The parent Frame has two components, the second is the mainPanel
-        Component mainPanel = this.parentFrame.getContentPane().getComponent(1);
-        this.mainPanel = (JPanel) mainPanel;
-
-        configureRace();
-    }
-
-    public void configureRace() {
-        
-        JList<String> currentPassages = new JList<>(GuiTypingRace.getPassages());
-
-        JScrollPane scrollPassages = new JScrollPane(currentPassages);
-        this.mainPanel.add(scrollPassages);
-
-        JLabel button = new JLabel("Add New passage");
-        JTextArea newPassage = new JTextArea(2, 21); //making sure max passage length is 42
-        JButton submitPassage = new JButton("Submit New Passage");
-
-        //adding actionListener object to submitPassage
-        //
-        SubmitPassageListener buttonListener = new SubmitPassageListener(newPassage);
-        submitPassage.addActionListener(buttonListener);
-
-        this.mainPanel.add(button);
-        this.mainPanel.add(newPassage);
-        this.mainPanel.add(submitPassage);
-
-        JLabel playersSelectLabel = new JLabel("Select number of players");
-        Integer [] typists = {2, 3, 4, 5, 6};
-        JComboBox typistList = new JComboBox(typists);
-
-        JLabel difficultyLabel = new JLabel("Select difficulty modifier");
-
-        JCheckBox autoCorrect = new JCheckBox("Auto-correct");
-        JCheckBox caffeineMode = new JCheckBox("Caffeine Mode");
-        JCheckBox nightShift = new JCheckBox("Night Shift");
-
-        this.mainPanel.add(playersSelectLabel);
-        this.mainPanel.add(typistList);
-        this.mainPanel.add(difficultyLabel);
-
-        this.mainPanel.add(autoCorrect);
-        this.mainPanel.add(caffeineMode);
-        this.mainPanel.add(nightShift);
 
         this.mainPanel.revalidate(); //making sure the panel updates
         this.mainPanel.repaint(); //making sure its redrawn
