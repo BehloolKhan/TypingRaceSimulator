@@ -484,4 +484,6 @@ public class GuiTypingRace
         passages.add("Rain falls softly on the green grass.");
 
     }
+
+    
 }
