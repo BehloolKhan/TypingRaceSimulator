@@ -51,6 +51,24 @@ class ConfigureRace implements ActionListener
         this.mainPanel.add(newPassage);
         this.mainPanel.add(submitPassage);
 
+        JLabel playersSelectLabel = new JLabel("Select number of players");
+        Integer [] typists = {2, 3, 4, 5, 6};
+        JComboBox typistList = new JComboBox(typists);
+
+        JLabel difficultyLabel = new JLabel("Select difficulty modifier");
+
+        JCheckBox autoCorrect = new JCheckBox("Auto-correct");
+        JCheckBox caffeineMode = new JCheckBox("Caffeine Mode");
+        JCheckBox nightShift = new JCheckBox("Night Shift");
+
+        this.mainPanel.add(playersSelectLabel);
+        this.mainPanel.add(typistList);
+        this.mainPanel.add(difficultyLabel);
+
+        this.mainPanel.add(autoCorrect);
+        this.mainPanel.add(caffeineMode);
+        this.mainPanel.add(nightShift);
+
         this.mainPanel.revalidate(); //making sure the panel updates
         this.mainPanel.repaint(); //making sure its redrawn
     };
