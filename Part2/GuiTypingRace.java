@@ -489,4 +489,13 @@ public class GuiTypingRace
             GuiTypingRace.passageLength = GuiTypingRace.currentPassage.length();
         }
     }
+
+    public static void setNumberOfTypists(Integer selectedNumberOfTypists) {
+        if (selectedNumberOfTypists == null) {
+            GuiTypingRace.currentNumberOfPlayers = 2;
+            return;
+        }
+
+        GuiTypingRace.currentNumberOfPlayers = selectedNumberOfTypists.intValue();
+    }
 }
