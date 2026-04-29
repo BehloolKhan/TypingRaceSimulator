@@ -30,6 +30,17 @@ public class CustomiseTypistListener implements ActionListener {
 
     }
 
+    public void displaySeats(int number) {
+        
+        JLabel seatLabel = new JLabel("SeatNumber " + number);
+        JComboBox typistToSelect = new JComboBox(this.typistsNames);
+        typistToSelect.addActionListener(new SelectTypistListener(this.typistsNames));
+
+        this.mainPanel.add(seatLabel);
+        this.mainPanel.add(typistToSelect);
+
+    }
+
     public void refreshPanel() { //used to refresh panel and replace it with new version
         this.mainPanel.revalidate();
         this.mainPanel.repaint();
