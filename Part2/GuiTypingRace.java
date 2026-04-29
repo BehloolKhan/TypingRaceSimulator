@@ -503,4 +503,8 @@ public class GuiTypingRace
     public Set<String> getNamesOfTypists () {
         return GuiTypingRace.guiTypists.keySet();
     }
+
+    public static int getCurrentNumberOfPlayers() {
+        return GuiTypingRace.currentNumberOfPlayers;
+    }
 }
