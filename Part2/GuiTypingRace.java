@@ -444,6 +444,8 @@ public class GuiTypingRace
         ConfigureRace raceButtonListener = new ConfigureRace(GuiTypingRace.frame);
         raceButton.addActionListener(raceButtonListener);
 
+        typistButton.addActionListener(new CustomiseTypistListener(GuiTypingRace.frame));
+
         buttonsPanel.add(raceButton);
         buttonsPanel.add(typistButton);
         buttonsPanel.add(performanceButton);
