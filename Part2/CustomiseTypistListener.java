@@ -71,4 +71,15 @@ class SelectTypistListener implements ActionListener {
         String valueSelected = (String) newComboBox.getSelectedItem();
         this.typistNames.removeElement(valueSelected);
     }
+
+    private static boolean doesExits(String value) {
+        for (String item : names) {
+            if (item.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void displayErrorm
 }
