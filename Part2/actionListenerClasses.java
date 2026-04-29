@@ -69,6 +69,8 @@ class ConfigureRace implements ActionListener
         this.mainPanel.add(caffeineMode);
         this.mainPanel.add(nightShift);
 
+        this.mainPanel.add(submitButton);
+
         this.mainPanel.revalidate(); //making sure the panel updates
         this.mainPanel.repaint(); //making sure its redrawn
     };
