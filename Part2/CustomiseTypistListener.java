@@ -35,3 +35,24 @@ public class CustomiseTypistListener implements ActionListener {
         this.mainPanel.repaint();
     }
 }
+
+//class that is used to implement listener object responsible for
+//tracking which player is selected in a the drop down list
+//
+class SelectTypistListener implements ActionListener {
+
+    private DefaultListModel<String> typistNames;
+
+    public SelectTypistListener(DefaultListModel<String> typistNames_) {
+        this.typistNames = typistNames_;
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object comboBox = e.getSource();
+        JComboBox newComboBox = (JComboBox) comboBox;
+
+        String valueSelected = (String) newComboBox.getSelectedItem();
+        this.typistNames.removeElement(valueSelected);
+    }
+}
