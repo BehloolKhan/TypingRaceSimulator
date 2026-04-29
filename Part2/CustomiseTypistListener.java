@@ -86,6 +86,12 @@ class SelectTypistListener implements ActionListener {
 
 class SubmitTypistListener implements ActionListener {
 
+    private JPanel parentPanel;
+
+    public SubmitTypistListener(JPanel parentPanel_) {
+        this.parentPanel = parentPanel_;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         
