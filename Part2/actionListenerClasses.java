@@ -116,12 +116,10 @@ class SubmitButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //what is the purpose of this event
-        //we need to grab the passage selected
-        //The number of races selected
-        //The check boxes
-
-        //set the values in GuiTypingRace to corresponding values
+        //set the passage:
+        //
+        String passageSelected = this.passages.getSelectedValue();
+        GuiTypingRace.setPassageInfo(passageSelected);
     }
 }
 
