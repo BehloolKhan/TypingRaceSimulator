@@ -58,6 +58,9 @@ class ConfigureRace implements ActionListener
         JCheckBox caffeineMode = new JCheckBox("Caffeine Mode");
         JCheckBox nightShift = new JCheckBox("Night Shift");
 
+        JButton submitButton = new JButton("submit all information");
+        submitButton.addActionListener(new SubmitButtonListener(currentPassages, typistList, autoCorrect, caffeineMode, nightShift));
+
         this.mainPanel.add(playersSelectLabel);
         this.mainPanel.add(typistList);
         this.mainPanel.add(difficultyLabel);
