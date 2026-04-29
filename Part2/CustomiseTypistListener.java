@@ -16,7 +16,8 @@ public class CustomiseTypistListener implements ActionListener {
 
     }
 
-    public void refreshPanel() {
-        
+    public void refreshPanel() { //used to refresh panel and replace it with new version
+        this.mainPanel.revalidate();
+        this.mainPanel.repaint();
     }
 }
