@@ -482,6 +482,11 @@ public class GuiTypingRace
 
     public static void setPassageInfo(String passage_) {
         GuiTypingRace.currentPassage = passage_;
-        GuiTypingRace.passageLength = passageLength_;
+        GuiTypingRace.passageLength = passage_.length();
+
+        if (GuiTypingRace.passageLength == 0) {
+            GuiTypingRace.currentPassage = "The Default passage because no passage was selected";
+            GuiTypingRace.passageLength = GuiTypingRace.currentPassage.length();
+        }
     }
 }
