@@ -509,4 +509,8 @@ public class GuiTypingRace
     public static int getCurrentNumberOfPlayers() {
         return GuiTypingRace.currentNumberOfPlayers;
     }
+
+    public static JFrame getParentFrame_() {
+        return GuiTypingRace.frame;
+    }
 }
