@@ -13,8 +13,9 @@ public class CustomiseTypistListener implements ActionListener {
     }
 
 
-    public void setMainPanel() {
-
+    public void setMainPanel(JFrame parentFrame_) {
+        Component mainPanel = parentFrame_.getContentPane().getComponent(1);
+        this.mainPanel = (JPanel) mainPanel;
     }
 
     @Override
