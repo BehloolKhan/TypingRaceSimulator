@@ -28,7 +28,7 @@ public class CustomiseTypistListener implements ActionListener {
 
         this.mainPanel.removeAll(); //start with a blank canvis
 
-        for (int i = 1; i <= GuiTypingRace.getCurrentNumberOfPlayers()) {
+        for (int i = 1; i <= GuiTypingRace.getCurrentNumberOfPlayers(); ++i) {
             displaySeats(i);
         }
 
