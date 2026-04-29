@@ -10,6 +10,7 @@ public class CustomiseTypistListener implements ActionListener {
 
     public CustomiseTypistListener(JFrame parentFrame_) {
         setMainPanel(parentFrame_);
+        setTypistsNames();
     }
 
 
