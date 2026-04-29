@@ -9,7 +9,7 @@ public class CustomiseTypistListener implements ActionListener {
     private  JPanel mainPanel;
 
     public CustomiseTypistListener(JFrame parentFrame_) {
-
+        setMainPanel(parentFrame_);
     }
 
 
