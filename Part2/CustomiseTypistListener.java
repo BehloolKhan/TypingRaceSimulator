@@ -19,6 +19,10 @@ public class CustomiseTypistListener implements ActionListener {
         this.mainPanel = (JPanel) mainPanel;
     }
 
+    public void setTypistsNames() {
+        for (String name: GuiTypingRace.getNamesOfTypists()) {typistsNames.addElement(name);}
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
