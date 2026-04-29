@@ -6,8 +6,16 @@ import java.awt.event.ActionListener;
 
 public class CustomiseTypistListener implements ActionListener {
     private  JFrame parentFrame;
-    private  JPanel parentPanel;
+    private  JPanel mainPanel;
 
+    public CustomiseTypistListener(JFrame parentFrame_) {
+
+    }
+
+
+    public void setMainPanel() {
+
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
