@@ -417,8 +417,8 @@ public class GuiTypingRace
         GuiTypingRace.guiTypists = new HashMap<String, GuiTypist>(6);
         String [] names = {"TURBO_FINGERS", "QWERTY_QUEEN", "HUNT_N_PECK", "MCQUEEN", "BOBBY", "JAMES"};
         for (int i = 0; i < 6; ++i) {
-            GuiTypingRace.guiTypists[i] = new GuiTypist('T', names[i], 0.5, "DEFAULT",
-                    "DEFAULT", "red", "DEFAULT");
+            GuiTypingRace.guiTypists.put(names[i], new GuiTypist('T', names[i], 0.5, "DEFAULT",
+                    "DEFAULT", "red", "DEFAULT"));
         }
     }
 
