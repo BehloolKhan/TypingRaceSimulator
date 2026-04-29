@@ -125,6 +125,11 @@ class SubmitButtonListener implements ActionListener {
         //
         String passageSelected = this.passages.getSelectedValue();
         GuiTypingRace.setPassageInfo(passageSelected);
+
+        Integer numberOfTypists = (Integer) this.typists.getSelectedItem();
+        GuiTypingRace.setNumberOfTypists(numberOfTypists);
+
+        GuiTypingRace.setDifficultyModifiers(this.autoCorrect.isSelected(), this.caffeineMode.isSelected(), this.NightShift.isSelected());
     }
 }
 
