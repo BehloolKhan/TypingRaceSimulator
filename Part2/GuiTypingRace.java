@@ -499,4 +499,8 @@ public class GuiTypingRace
 
         GuiTypingRace.currentNumberOfPlayers = selectedNumberOfTypists.intValue();
     }
+
+    public Set<String> getNamesOfTypists () {
+        return GuiTypingRace.guiTypists.keySet();
+    }
 }
