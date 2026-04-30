@@ -75,26 +75,20 @@ public class GuiTypingRace
      * @param theTypist  the typist to seat
      * @param seatNumber the seat to place them in (1–3)
      */
-    
-//    public static void addTypist(Typist theTypist, int seatNumber)
-//    {
-//        if (seatNumber == 1)
-//        {
-//            seat1Typist = theTypist;
-//        }
-//        else if (seatNumber == 2)
-//        {
-//            seat2Typist = theTypist;
-//        }
-//        else if (seatNumber == 3)
-//        {
-//            seat3Typist = theTypist;
-//        }
-//        else
-//        {
-//            System.out.println("Cannot seat typist at seat " + seatNumber + " — there is no such seat.");
-//        }
-//    }
+
+    public static void addTypist(GuiTypist theTypist)
+    {
+        currentGuiTypists.add(theTypist);
+    }
+
+    /*
+    * Method clears the players stored in the arrayList, if any, from previous round.
+    * We will call this method at the end of the race
+    */
+
+    public static void clearPlayers() {
+        currentGuiTypists.clear();
+    }
 
     /**
      * Starts the typing race.
