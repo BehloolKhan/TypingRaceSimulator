@@ -92,6 +92,17 @@ class SubmitTypistListener implements ActionListener {
         this.parentPanel = parentPanel_;
     }
 
+    private static void setCheckBoxes(JPanel parentPanel_, String [] options) {
+        ButtonGroup G1 = new ButtonGroup();
+        JRadioButton current;
+        for (int i = 0; i < options.length; ++i) {
+            current = new JRadioButton();
+            current.setText(options[i]);
+            G1.add(current);
+            parentPanel_.add(current);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         
