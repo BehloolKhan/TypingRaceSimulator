@@ -16,6 +16,11 @@ public class StartRaceListener implements ActionListener {
         setMainPanel();
         this.mainPanel.removeAll();
 
+        //adding the JTextPane that will be used to display our races.
+        //
+        JTextPane textArea = new JTextPane();
+
+
         GuiTypingRace.startRace();
     }
 
