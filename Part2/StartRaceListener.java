@@ -13,6 +13,9 @@ public class StartRaceListener implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        setMainPanel();
+        this.mainPanel.removeAll();
+
         GuiTypingRace.startRace();
     }
 
