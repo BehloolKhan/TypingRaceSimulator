@@ -15,4 +15,9 @@ public class StartRaceListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         GuiTypingRace.startRace();
     }
+
+    public void setMainPanel() {
+        Component mainPanel = this.parentFrame.getContentPane().getComponent(1);
+        this.mainPanel = (JPanel) mainPanel;
+    }
 }
