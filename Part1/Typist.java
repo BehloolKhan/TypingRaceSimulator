@@ -48,7 +48,10 @@ public class Typist
         this.setAccuracy(typistAccuracy);
     }
 
-
+    public Typist(String typistName, double typistAccuracy) {
+        this.setTypistName(typistName);
+        this.setAccuracy(typistAccuracy);
+    }
     // Methods of class Typist
 
     /**
