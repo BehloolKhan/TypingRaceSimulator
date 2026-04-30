@@ -251,4 +251,9 @@ public class Typist
     public boolean hasMistyped() {
         return this.mistyped;
     }
+
+    /*Method that is supposed to set the names of a given player*/
+    public void setTypistName(String Name) {
+        this.typistName = Name;
+    }
 }
