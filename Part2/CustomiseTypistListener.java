@@ -105,6 +105,34 @@ class SubmitTypistListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
+        for (String name: SelectTypistListener.getSelectedNames()) {
+            GuiTypist currentTypist = GuiTypingRace.getGuiTypists().get(name);
+
+            JPanel profilePanel = new JPanel();
+
+            profilePanel.add(new JLabel("Profile: " + name));
+            profilePanel.add(new JLabel("PlayersAccuracy " + currentTypist.getAccuracy()));
+
+            //Then the options:
+            profilePanel.add(new JLabel("Typing Style: "));
+
+            setCheckBoxes(profilePanel, new String[] {"Touch Typist", "Hunt and Peck",
+                    "Phone thumbs", "Voice-to-text"});
+
+            //then they key board type
+            profilePanel.add(new JLabel("Select from different Key Boards"));
+
+            setCheckBoxes(profilePanel, new String [] {"Mechanical", "Membrane",
+                    "TouchScreen", "Stenography"});
+            profilePanel.add(new JLabel("Symbol"));
+            profilePanel.add(new JLabel("Select Colour: "));
+
+            Color [] colours = {Color.BLACK, Color.BLUE, Color.GREEN, Color.RED, Color.MAGENTA};
+            DefaultComboBoxModel<Color> coloursToSelect = new DefaultComboBoxModel<>(colours);
+            JComboBox<Color> coloursList = new JComboBox<>(coloursToSelect);
+
+            profilePanel.add(coloursList);
+        }
     }
 }
