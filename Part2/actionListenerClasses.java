@@ -29,6 +29,9 @@ class ConfigureRace implements ActionListener
 
     public void configureRace() {
 
+        this.mainPanel.removeAll(); //make sure we have a clean start
+        this.mainPanel.setLayout(new BoxLayout(this.mainPanel, BoxLayout.Y_AXIS));
+
         JList<String> currentPassages = new JList<>(GuiTypingRace.getPassages());
         currentPassages.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //making sure you only select one passage
 
