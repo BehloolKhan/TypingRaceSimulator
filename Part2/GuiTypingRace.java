@@ -513,4 +513,8 @@ public class GuiTypingRace
     public static JFrame getParentFrame_() {
         return GuiTypingRace.frame;
     }
+
+    public static HashMap<String, GuiTypist> getGuiTypists() {
+        return GuiTypingRace.guiTypists;
+    }
 }
