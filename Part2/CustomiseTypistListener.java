@@ -136,3 +136,42 @@ class SubmitTypistListener implements ActionListener {
         }
     }
 }
+
+
+//This class is responsible for processing the typist information
+//
+class SubmitTypistInfoListener implements ActionListener {
+
+    private ButtonGroup typistStyle;
+    private ButtonGroup KeyBoardType;
+    private JTextField symbol;
+    private JComboBox<String> coloursList;
+    private JComboBox<String> accessoriesList;
+    private String name;
+
+    public SubmitTypistInfoListener(ButtonGroup typistStyle_, ButtonGroup keyBoardType_,
+                                    JTextField symbol_, JComboBox<String> coloursList_,
+                                    JComboBox<String> accessoriesList_, String name_) {
+
+        this.typistStyle = typistStyle_;
+        this.KeyBoardType = keyBoardType_;
+        this.symbol = symbol_;
+        this.coloursList = coloursList_;
+        this.accessoriesList = accessoriesList_;
+        this.name = name_;
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        GuiTypist person = GuiTypingRace.getGuiTypists().get(this.name);
+
+        person.setTypingStyle(this.typistStyle.getSelection().getActionCommand());
+        person.setKeyBoardType(this.KeyBoardType.getSelection().getActionCommand());
+        person.setSymbol(this.symbol.getText());
+
+        person.setColour((String ) this.coloursList.getSelectedItem());
+        person.setAccessories((String) this.accessoriesList.getSelectedItem());
+    }
+}
