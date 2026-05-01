@@ -23,10 +23,25 @@ public class StartRaceListener implements ActionListener {
 
         //adding the JTextPane that will be used to display our races.
         //
-        JTextPane textArea = new JTextPane();
+        JTextPane textPane;
+        ArrayList<JTextPane> textPanes = new ArrayList<JTextPane>();
 
+        for (int i = 1; i <= GuiTypingRace.getCurrentNumberOfPlayers(); ++i) {
 
-        GuiTypingRace.startRace();
+            textPane = new JTextPane();
+            textPane.setText(GuiTypingRace.getPassage());
+            SimpleAttributeSet attributes = new SimpleAttributeSet();
+            StyleConstants.setForeground(attributes, Color.GRAY);
+
+            textPanes.add(textPane);
+            this.mainPanel.add(textPane);
+        }
+
+        GuiTypingRace.startRace(textPanes, this.mainPanel);
+        //Now we have to somehow update our typist text: ?
+        this.mainPanel.revalidate();
+        this.mainPanel.repaint();
+
     }
 
     public void setMainPanel() {
