@@ -191,6 +191,7 @@ public class TypingRace
         if (Math.random() <= theTypist.getAccuracy())
         {
             theTypist.typeCharacter();
+            theTypist.incrementByOne();
             return;
         }
 
