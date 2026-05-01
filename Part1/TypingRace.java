@@ -99,7 +99,7 @@ public class TypingRace
             advanceTypist(seat3Typist);
 
             // Print the current state of the race
-            printRace();
+            printRace(timer);
 
             // Check if any typist has finished the passage
             if ( raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist) )
@@ -109,7 +109,6 @@ public class TypingRace
 
             // Wait 200ms between turns so the animation is visible
             try {
-                timer += 200;
                 TimeUnit.MILLISECONDS.sleep(200);
             } catch (Exception e) {}
         }
@@ -243,7 +242,7 @@ public class TypingRace
      * Shows each typist's position along the passage, burnout state,
      * and a WPM estimate based on current progress.
      */
-    public static void printRace()
+    public static void printRace(int timer)
     {
         System.out.print('\u000C'); // Clear terminal
 
@@ -251,13 +250,13 @@ public class TypingRace
         multiplePrint('=', passageLength + 3);
         System.out.println();
 
-        printSeat(seat1Typist);
+        printSeat(seat1Typist, timer);
         System.out.println();
 
-        printSeat(seat2Typist);
+        printSeat(seat2Typist, timer);
         System.out.println();
 
-        printSeat(seat3Typist);
+        printSeat(seat3Typist, timer);
         System.out.println();
 
         multiplePrint('=', passageLength + 3);
@@ -277,7 +276,7 @@ public class TypingRace
      *
      * @param theTypist the typist whose lane to print
      */
-    public static void printSeat(Typist theTypist)
+    public static void printSeat(Typist theTypist, int timer)
     {
         timer += 200;
         int spacesBefore = theTypist.getProgress();
