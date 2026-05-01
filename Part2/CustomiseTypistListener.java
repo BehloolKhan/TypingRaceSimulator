@@ -134,30 +134,56 @@ class SubmitTypistListener implements ActionListener {
             GuiTypist currentTypist = GuiTypingRace.getGuiTypists().get(name);
 
             JPanel profilePanel = new JPanel();
+            profilePanel.setLayout(new BoxLayout(profilePanel, BoxLayout.Y_AXIS));
 
             profilePanel.add(new JLabel("Profile: " + name));
             profilePanel.add(new JLabel("PlayersAccuracy " + currentTypist.getAccuracy()));
 
             //Then the options:
             profilePanel.add(new JLabel("Typing Style: "));
-
-            setCheckBoxes(profilePanel, new String[] {"Touch Typist", "Hunt and Peck",
+            ButtonGroup typingStyles_ = setCheckBoxes(profilePanel, new String[] {"Touch Typist", "Hunt and Peck",
                     "Phone thumbs", "Voice-to-text"});
 
             //then they key board type
             profilePanel.add(new JLabel("Select from different Key Boards"));
-
-            setCheckBoxes(profilePanel, new String [] {"Mechanical", "Membrane",
+            ButtonGroup keyBoardType_ = setCheckBoxes(profilePanel, new String [] {"Mechanical", "Membrane",
                     "TouchScreen", "Stenography"});
-            profilePanel.add(new JLabel("Symbol"));
+
+
+            profilePanel.add(new JLabel("Symbol: "));
+            JTextField symbol = new JTextField();
+            profilePanel.add(symbol);
+
             profilePanel.add(new JLabel("Select Colour: "));
 
-            Color [] colours = {Color.BLACK, Color.BLUE, Color.GREEN, Color.RED, Color.MAGENTA};
-            DefaultComboBoxModel<Color> coloursToSelect = new DefaultComboBoxModel<>(colours);
-            JComboBox<Color> coloursList = new JComboBox<>(coloursToSelect);
+            String [] colours = {"YELLOW", "BLUE", "GREEN", "RED", "MAGENTA"};
+            DefaultComboBoxModel<String> coloursToSelect = new DefaultComboBoxModel<>(colours);
+            JComboBox<String> coloursList = new JComboBox<>(coloursToSelect);
 
             profilePanel.add(coloursList);
+
+            String [] accessories = {"Wrist support", "Energy Drink", "Noise-Cancelling HeadPhones"};
+            JComboBox<String> accessoriesList = new JComboBox<>(accessories);
+
+            profilePanel.add(new JLabel("Select Accessory"));
+            profilePanel.add(accessoriesList);
+
+
+            JButton submitButton = new JButton("Submit Typist - information ");
+            submitButton.addActionListener(new SubmitTypistInfoListener(typingStyles_, keyBoardType_,
+                    symbol, coloursList, accessoriesList, name));
+
+            profilePanel.add(submitButton);
+
+            this.parentPanel.add(profilePanel);
         }
+
+        JButton submit = new JButton("Start Race: ");
+        submit.addActionListener(new StartRaceListener(GuiTypingRace.getParentFrame()));
+
+        this.parentPanel.add(submit);
+        this.parentPanel.revalidate();
+        this.parentPanel.repaint();
     }
 }
 
@@ -191,11 +217,20 @@ class SubmitTypistInfoListener implements ActionListener {
 
         GuiTypist person = GuiTypingRace.getGuiTypists().get(this.name);
 
-        person.setTypingStyle(this.typistStyle.getSelection().getActionCommand());
-        person.setKeyBoardType(this.KeyBoardType.getSelection().getActionCommand());
-        person.setSymbol(this.symbol.getText());
+        try {
+            person.setTypingStyle(this.typistStyle.getSelection().getActionCommand());
+            person.setKeyBoardType(this.KeyBoardType.getSelection().getActionCommand());
+        }
 
-        person.setColour((String ) this.coloursList.getSelectedItem());
+        catch (NullPointerException exception) {
+            JOptionPane.showMessageDialog(GuiTypingRace.getParentFrame(), "Maks sure you have selected a keyoard type and a typist tyle",
+                    "Not selected value", JOptionPane.WARNING_MESSAGE);
+        }
+
+        person.setSymbol(this.symbol.getText());
+        person.setColour((String) this.coloursList.getSelectedItem());
         person.setAccessories((String) this.accessoriesList.getSelectedItem());
+
+        GuiTypingRace.addTypist(person);
     }
 }
