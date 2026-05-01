@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class CustomiseTypistListener implements ActionListener {
-    private  JFrame parentFrame;
-    private  JPanel mainPanel;
+    private JFrame parentFrame;
+    private JPanel mainPanel;
 
     public CustomiseTypistListener(JFrame parentFrame_) {
         setMainPanel(parentFrame_);
