@@ -38,7 +38,11 @@ public class CustomiseTypistListener implements ActionListener {
             displaySeats(i);
         }
 
+        JButton button = new JButton("display profiles: ");
+        button.addActionListener(new SubmitTypistListener(this.mainPanel));
+        this.mainPanel.add(button);
 
+        refreshPanel();
     }
 
     public void displaySeats(int number) {
