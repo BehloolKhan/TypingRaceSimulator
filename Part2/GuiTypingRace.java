@@ -4,8 +4,7 @@ package Part2;
 
 import java.awt.*;
 import java.lang.Math;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import javax.swing.*; // will need this module for our GUI
 import javax.swing.Timer;
 import javax.swing.text.SimpleAttributeSet;
