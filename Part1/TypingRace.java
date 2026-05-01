@@ -322,6 +322,8 @@ public class TypingRace
             System.out.print(theTypist.getName()
                 + " (Accuracy: " + theTypist.getAccuracy() + ")");
         }
+
+        System.out.print("Esitimated WPM: " + theTypist.currentWPM(timer));
     }
 
     /**
