@@ -96,7 +96,14 @@ class SelectTypistListener implements ActionListener {
         return false;
     }
 
-    private static void displayErrorm
+    private static void displayErrorMessage(String value) {
+        JOptionPane.showMessageDialog(GuiTypingRace.getParentFrame(), value + "is already selected",
+                "duplicate Player error", JOptionPane.WARNING_MESSAGE);
+    }
+
+    public static ArrayList<String> getSelectedNames() {
+        return names;
+    }
 }
 
 class SubmitTypistListener implements ActionListener {
