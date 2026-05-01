@@ -46,6 +46,8 @@ relative to the TypingRaceSimulator folder, in intellij
 * next run the command `javac Part2/*.java` to compile all files in current directory
 * next run the command `java "-Dfile.encoding=UTF-8" Part2.GuiTypingRace` as this is the class with the main method
 
+
+
 ### compilation of files:
 * `chcp 65001` - windows
 * `javac testingUnit/TypistTest.java`
