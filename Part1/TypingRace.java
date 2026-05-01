@@ -109,6 +109,7 @@ public class TypingRace
 
             // Wait 200ms between turns so the animation is visible
             try {
+                timer += 200;
                 TimeUnit.MILLISECONDS.sleep(200);
             } catch (Exception e) {}
         }
