@@ -191,6 +191,7 @@ public class TypingRace
         if (Math.random() <= theTypist.getAccuracy())
         {
             theTypist.typeCharacter();
+            return;
         }
 
         // Mistype check — the probability should reflect the typist's accuracy
