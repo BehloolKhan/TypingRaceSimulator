@@ -31,6 +31,9 @@ public class CustomiseTypistListener implements ActionListener {
         this.mainPanel.removeAll(); //start with a blank canvis
         this.mainPanel.setLayout(new FlowLayout());
 
+        if (GuiTypingRace.getCurrentNumberOfPlayers() == 0) {
+            return; //exit early;
+        }
         for (int i = 1; i <= GuiTypingRace.getCurrentNumberOfPlayers(); ++i) {
             displaySeats(i);
         }
