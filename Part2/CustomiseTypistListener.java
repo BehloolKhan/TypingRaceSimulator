@@ -26,6 +26,7 @@ public class CustomiseTypistListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        setMainPanel();
 
         this.mainPanel.removeAll(); //start with a blank canvis
 
