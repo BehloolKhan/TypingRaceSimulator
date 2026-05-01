@@ -37,7 +37,7 @@ public class StartRaceListener implements ActionListener {
             this.mainPanel.add(textPane);
         }
 
-        GuiTypingRace.startRace(textPanes, this.mainPanel);
+        GuiTypingRace.startRaceGUI(textPanes, this.mainPanel);
         //Now we have to somehow update our typist text: ?
         this.mainPanel.revalidate();
         this.mainPanel.repaint();
