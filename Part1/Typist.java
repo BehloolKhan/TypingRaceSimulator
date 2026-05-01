@@ -11,8 +11,7 @@ package Part1;
  * @author (Behlool Khan)
  * @version (a version number or a date)
  */
-public class Typist
-{
+public class Typist {
     // Fields of class Typist
     // Hint: you will need six fields. Think carefully about their types.
     // One of them tracks how far along the passage the typist has reached.
@@ -33,22 +32,25 @@ public class Typist
     private boolean mistyped = false; //by default it will be false
     private int charsTyped = 0;
     // Constructor of class Typist
+
     /**
      * Constructor for objects of class Typist.
      * Creates a new typist with a given symbol, name, and accuracy rating.
      *
-     * @param typistSymbol  a single Unicode character representing this typist (e.g. '①', '②', '③')
-     * @param typistName    the name of the typist (e.g. "TURBOFINGERS")
+     * @param typistSymbol   a single Unicode character representing this typist (e.g. '①', '②', '③')
+     * @param typistName     the name of the typist (e.g. "TURBOFINGERS")
      * @param typistAccuracy the typist's accuracy rating, between 0.0 and 1.0
      */
-    public Typist(char typistSymbol, String typistName, double typistAccuracy)
-    {
+    public Typist(char typistSymbol, String typistName, double typistAccuracy) {
         this.setSymbol(typistSymbol);
         this.typistName = typistName;
         this.setAccuracy(typistAccuracy);
     }
 
-
+    public Typist(String typistName, double typistAccuracy) {
+        this.setTypistName(typistName);
+        this.setAccuracy(typistAccuracy);
+    }
     // Methods of class Typist
 
     /**
@@ -57,13 +59,11 @@ public class Typist
      *
      * @param turns the number of turns the burnout will last
      */
-    public void burnOut(int turns)
-    {
+    public void burnOut(int turns) {
         if (turns > 0) {
             this.burnOut = true;
             this.numOfBurnOuts = turns;
-        }
-        else {
+        } else {
             System.out.println("number of turns to be burnt cannot be O or less");
         }
     }
@@ -73,8 +73,7 @@ public class Typist
      * When the counter reaches zero, the typist recovers automatically.
      * Has no effect if the typist is not currently burnt out.
      */
-    public void recoverFromBurnout()
-    {
+    public void recoverFromBurnout() {
         this.numOfBurnOuts -= 1;
         if (this.numOfBurnOuts <= 0) {
 
@@ -87,8 +86,7 @@ public class Typist
      *
      * @return accuracy as a double between 0.0 and 1.0
      */
-    public double getAccuracy()
-    {
+    public double getAccuracy() {
         return this.accuracy; // placeholder - replace with correct implementation
     }
 
@@ -99,8 +97,7 @@ public class Typist
      *
      * @return progress as a non-negative integer
      */
-    public int getProgress()
-    {
+    public int getProgress() {
         return this.progress; // placeholder - replace with correct implementation
     }
 
@@ -109,8 +106,7 @@ public class Typist
      *
      * @return the typist's name as a String
      */
-    public String getName()
-    {
+    public String getName() {
         return this.typistName; // placeholder - replace with correct implementation
     }
 
@@ -119,8 +115,7 @@ public class Typist
      *
      * @return the typist's symbol as a char
      */
-    public char getSymbol()
-    {
+    public char getSymbol() {
         return this.typistSymbol; // placeholder - replace with correct implementation
     }
 
@@ -130,8 +125,7 @@ public class Typist
      *
      * @return burnout turns remaining as a non-negative integer
      */
-    public int getBurnoutTurnsRemaining()
-    {
+    public int getBurnoutTurnsRemaining() {
         return this.numOfBurnOuts; // placeholder - replace with correct implementation
     }
 
@@ -139,8 +133,7 @@ public class Typist
      * Resets the typist to their initial state, ready for a new race.
      * Progress returns to zero, burnout is cleared entirely.
      */
-    public void resetToStart()
-    {
+    public void resetToStart() {
         this.progress = 0; //reset progress to 0
         this.burnOut = false; //exit burn out state
         this.numOfBurnOuts = 0; //reset to 0
@@ -152,8 +145,7 @@ public class Typist
      *
      * @return true if burnt out
      */
-    public boolean isBurntOut()
-    {
+    public boolean isBurntOut() {
         return this.burnOut; // placeholder - replace with correct implementation
     }
 
@@ -161,8 +153,7 @@ public class Typist
      * Advances the typist forward by one character along the passage.
      * Should only be called when the typist is not burnt out.
      */
-    public void typeCharacter()
-    {
+    public void typeCharacter() {
         this.progress += 1;
     }
 
@@ -172,8 +163,7 @@ public class Typist
      *
      * @param amount the number of characters to slide back (must be positive)
      */
-    public void slideBack(int amount)
-    {
+    public void slideBack(int amount) {
         if (amount < 0) {
             return; //exit early
         }
@@ -190,8 +180,7 @@ public class Typist
      *
      * @param newAccuracy the new accuracy rating
      */
-    public void setAccuracy(double newAccuracy)
-    {
+    public void setAccuracy(double newAccuracy) {
         this.accuracy = newAccuracy;
         if (this.accuracy < 0.0) {
 
@@ -210,8 +199,7 @@ public class Typist
      *
      * @param newSymbol the new symbol character
      */
-    public void setSymbol(char newSymbol)
-    {
+    public void setSymbol(char newSymbol) {
         this.typistSymbol = newSymbol;
     }
 
@@ -223,35 +211,36 @@ public class Typist
     }
 
     /*
-    * Method to return previous accuracy
-    */
+     * Method to return previous accuracy
+     */
     public double getPreviousAccuracy() {
         return this.previousAccuracy;
     }
 
     /*
-    * method sets the mistyped field to true when player has mistyped
-    * */
+     * method sets the mistyped field to true when player has mistyped
+     * */
 
     public void setMistyped() {
         this.mistyped = true;
     }
 
     /*
-    * method that causes player to enter burnt out state
-    * */
+     * method that causes player to enter burnt out state
+     * */
 
     public void exitMistyped() {
         this.mistyped = false;
     }
 
     /*
-    * returns true if typist has mistyped, false otherwise
-    * */
+     * returns true if typist has mistyped, false otherwise
+     * */
 
     public boolean hasMistyped() {
         return this.mistyped;
     }
+
 
     public void incrementByOne() {
         this.charsTyped += 1;
@@ -261,6 +250,12 @@ public class Typist
         double minutesPassed = (TimePassed / 1000.0);
         minutesPassed = minutesPassed / 60.0;
 
-        return (charsTyped/minutesPassed);
+        return (charsTyped / minutesPassed);
     }
+
+    /*Method that is supposed to set the names of a given player*/
+    public void setTypistName(String Name) {
+        this.typistName = Name;
+    }
+
 }
