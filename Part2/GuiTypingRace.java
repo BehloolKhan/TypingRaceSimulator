@@ -27,8 +27,8 @@ public class GuiTypingRace
     private static JPanel mainPanel; //This is the panel that will be switched out
 
     private static final double MISTYPE_BASE_CHANCE = 0.3;
-    private static final int    SLIDE_BACK_AMOUNT   = 2;
-    private static final int    BURNOUT_DURATION     = 3;
+    private static  int    SLIDE_BACK_AMOUNT   = 2;
+    private static final int    BURNOUT_DURATION     = 2;
 
     //following contains modes that Can be applied to everyone
     //
@@ -75,8 +75,17 @@ public class GuiTypingRace
      */
     public static void startRaceGUI(ArrayList<JTextPane> textAreas, JPanel panel_) {
 
+        if (autoCorrectOn) {
+            SLIDE_BACK_AMOUNT = 1;
+        }
+
+        if (caffeineMode) {
+            for (int i = 0; i < currentGuiTypists.size(); ++i) {
+                currentGuiTypists.get(i).setAccuracy(currentGuiTypists.get(i).getAccuracy() - 0.1);
+            }
+        }
+
         // Reset all typists to the start of the passage
-        // (Ty was in a hurry here)
         for (int i = 0; i < currentGuiTypists.size(); ++i) {
             currentGuiTypists.get(i).resetToStart();
         }
