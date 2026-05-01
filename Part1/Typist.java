@@ -251,4 +251,15 @@ public class Typist
     public boolean hasMistyped() {
         return this.mistyped;
     }
+
+    public void incrementByOne() {
+        this.charsTyped += 1;
+    }
+
+    public int currentWPM(int TimePassed) {
+        int minutesPassed = (TimePassed / 1000);
+        minutesPassed = minutesPassed / 60;
+
+        return (charsTyped/minutesPassed);
+    }
 }
