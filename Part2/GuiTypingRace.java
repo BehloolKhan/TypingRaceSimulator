@@ -73,7 +73,7 @@ public class GuiTypingRace
      * Note from Ty: "I didn't bother printing the winner at the end,
      * you can probably figure that out yourself."
      */
-    public static void startRace(ArrayList<JTextPane> textAreas, JPanel panel_) {
+    public static void startRaceGUI(ArrayList<JTextPane> textAreas, JPanel panel_) {
 
         // Reset all typists to the start of the passage
         // (Ty was in a hurry here)
