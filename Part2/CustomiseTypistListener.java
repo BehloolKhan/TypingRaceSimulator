@@ -46,7 +46,7 @@ public class CustomiseTypistListener implements ActionListener {
     }
 
     public void displaySeats(int number) {
-        
+
         JLabel seatLabel = new JLabel("SeatNumber " + number);
         JComboBox typistToSelect = new JComboBox(this.typistsNames);
         typistToSelect.addActionListener(new SelectTypistListener(this.typistsNames));
