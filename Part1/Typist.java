@@ -256,9 +256,9 @@ public class Typist
         this.charsTyped += 1;
     }
 
-    public int currentWPM(int TimePassed) {
-        int minutesPassed = (TimePassed / 1000);
-        minutesPassed = minutesPassed / 60;
+    public double currentWPM(int TimePassed) {
+        double minutesPassed = (TimePassed / 1000.0);
+        minutesPassed = minutesPassed / 60.0;
 
         return (charsTyped/minutesPassed);
     }
