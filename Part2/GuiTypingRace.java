@@ -17,7 +17,7 @@ public class GuiTypingRace
 
     private static String currentPassage;//used to keep track of the current length of passage
     private static int passageLength; //used to keep track of the length of current passage
-    private static int currentNumberOfPlayers; 
+    private static int currentNumberOfPlayers;
 
     private static GuiTypist [] guiTypists;
     private static JFrame frame; //this is the frame at that makes up the GUi
