@@ -41,24 +41,14 @@ public class GuiTypingRace
 
         //we add the 6 typists to the array
         initialiseTypists();
+        setStarterPassages();
         displayFrame();
 
-//        final int numberOfRaces = inputNumberRaces();
-//        for (int i = 1; i <= numberOfRaces; ++i) {
-//            int newPassageLength = TypingRace.generateRandomPassageLength();
-//            setPassageLength(newPassageLength);
-//            //ingore two lines of code above
-//            //configureRace(); -> returns number of typists
-//            //customiseTypists(numberTypists);
-//            startRace();
-//        }
     }
 
     /**
      * Seats a typist at the given seat number (1, 2, or 3).
-     *
      * @param theTypist  the typist to seat
-     * @param seatNumber the seat to place them in (1–3)
      */
 
     public static void addTypist(GuiTypist theTypist)
@@ -83,86 +73,90 @@ public class GuiTypingRace
      * Note from Ty: "I didn't bother printing the winner at the end,
      * you can probably figure that out yourself."
      */
-//    public static void startRace()
-//    {
-//        boolean finished = false;
-//
-//        // Reset all typists to the start of the passage
-//        // (Ty was in a hurry here)
-//        seat1Typist.resetToStart();
-//        seat2Typist.resetToStart();
-//        seat3Typist.resetToStart();
-//        while (!finished)
-//        {
-//            // Advance each typist by one turn
-//            advanceTypist(seat1Typist);
-//            advanceTypist(seat2Typist);
-//            advanceTypist(seat3Typist);
-//
-//            // Print the current state of the race
-//            printRace();
-//
-//            // Check if any typist has finished the passage
-//            if ( raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist) )
-//            {
-//                finished = true;
-//            }
-//
-//            // Wait 200ms between turns so the animation is visible
-//            try {
-//                TimeUnit.MILLISECONDS.sleep(200);
-//            } catch (Exception e) {}
-//        }
-//
-//        // TODO (Task 2a): Print the winner's name here
-//        Typist [] arrayTypist = {seat1Typist, seat2Typist, seat3Typist};
-//        Typist [] possibleWinners = new Typist[3];
-//
-//        int countOne = 0;
-//        int countTwo = 0;
-//        while (countOne < arrayTypist.length) {
-//            if (arrayTypist[countOne].getProgress() >= passageLength) {
-//                possibleWinners[countTwo] = arrayTypist[countOne];
-//                countTwo += 1;
-//            }
-//            countOne+=1;
-//        }
-//
-//        ArrayList<Typist> winners = new ArrayList<Typist>(3);
-//        winners.add(possibleWinners[0]);
-//
-//        int maxValue = possibleWinners[0].getProgress();
-//
-//        for (int i = 1; i < countTwo; ++i) {
-//
-//            if (possibleWinners[i].getProgress() > maxValue) {
-//                winners.clear();
-//                maxValue = possibleWinners[i].getProgress();
-//                winners.add(possibleWinners[i]);
-//            }
-//
-//            else if (possibleWinners[i].getProgress() == maxValue) {
-//                winners.add(possibleWinners[i]);
-//            }
-//        }
-//
-//        //need to update the accuracy of the winners accordingly:
-//        //
-//        for (int i = 0; i < winners.size(); ++i) {
-//            winners.get(i).setPreviousAccuracy();
-//            winners.get(i).setAccuracy(winners.get(i).getAccuracy() + 0.1);
-//        }
-//        //now need to get the name of winners
-//        //
-//        System.out.println("And the winner(s) is/are:... ");
-//        for (int i = 0; i < winners.size(); ++i) {
-//            System.out.print(winners.get(i).getName());
-//            System.out.println(": Final Accuracy: " + winners.get(i).getAccuracy() + " (improved from " +
-//                    winners.get(i).getPreviousAccuracy() + " )");
-//            System.out.println(" ");
-//        }
+    public static void startRace(ArrayList<JTextPane> textAreas, JPanel panel_) {
+
+        // Reset all typists to the start of the passage
+        // (Ty was in a hurry here)
+        for (int i = 0; i < currentGuiTypists.size(); ++i) {
+            currentGuiTypists.get(i).resetToStart();
+        }
+
+        Timer raceTimer = new Timer(200, null);
+        raceTimer.addActionListener(e -> {
+
+            boolean finished = false;
+
+            // Advance each typist by one turn
+            for (int i = 0; i < currentGuiTypists.size(); ++i) {
+                advanceTypist(currentGuiTypists.get(i));
+            }
+
+            printRace(textAreas, panel_);
+
+            for (GuiTypist typist : currentGuiTypists) {
+                if (raceFinishedBy(typist)) {
+                    finished = true;
+
+                }
+            }
+
+            if (finished) {
+                raceTimer.stop();
 
 
+                raceTimer.start();
+                // TODO (Task 2a): Print the winner's name here
+                GuiTypist[] possibleWinners = new GuiTypist[currentGuiTypists.size()];
+
+                int countOne = 0;
+                int countTwo = 0;
+
+                while (countOne < currentGuiTypists.size()) {
+                    if (currentGuiTypists.get(countOne).getProgress() >= passageLength) {
+                        possibleWinners[countTwo] = currentGuiTypists.get(countOne);
+                        countTwo += 1;
+                    }
+                    countOne += 1;
+                }
+
+                ArrayList<GuiTypist> winners = new ArrayList<GuiTypist>(6);
+                winners.add(possibleWinners[0]);
+
+                int maxValue = possibleWinners[0].getProgress();
+
+                for (int i = 1; i < countTwo; ++i) {
+
+                    if (possibleWinners[i].getProgress() > maxValue) {
+                        winners.clear();
+                        maxValue = possibleWinners[i].getProgress();
+                        winners.add(possibleWinners[i]);
+                    } else if (possibleWinners[i].getProgress() == maxValue) {
+                        winners.add(possibleWinners[i]);
+                    }
+                }
+
+                //need to update the accuracy of the winners accordingly:
+
+                for (int i = 0; i < winners.size(); ++i) {
+                    winners.get(i).setPreviousAccuracy();
+                    winners.get(i).setAccuracy(winners.get(i).getAccuracy() + 0.1);
+                }
+                //now need to get the name of winners
+                //
+                panel_.add(new JLabel("And the winner(s) is/are:... "));
+
+                for (int i = 0; i < winners.size(); ++i) {
+                    panel_.add(new JLabel(winners.get(i).getName()));
+                    panel_.add(new JLabel(": Final Accuracy: " + winners.get(i).getAccuracy() + " (improved from " +
+                            winners.get(i).getPreviousAccuracy() + " )"));
+                }
+                panel_.revalidate();
+                panel_.repaint();
+
+                GuiTypingRace.clearPlayers();
+            }
+        });
+        raceTimer.start();
     }
 
     /**
@@ -224,7 +218,7 @@ public class GuiTypingRace
     public static boolean raceFinishedBy(GuiTypist theTypist)
     {
         // Ty was confident this condition was correct
-        if (theTypist.getProgress() >= passageLength)
+        if (theTypist.getProgress() >= GuiTypingRace.passageLength)
         {
             return true;
 
@@ -240,27 +234,16 @@ public class GuiTypingRace
      * Shows each typist's position along the passage, burnout state,
      * and a WPM estimate based on current progress.
      */
-    public static void printRace()
-//    {
-//        System.out.print('\u000C'); // Clear terminal
-//
-//        System.out.println("  TYPING RACE — passage length: " + passageLength + " chars");
-//        multiplePrint('=', passageLength + 3);
-//        System.out.println();
-//
-//        printSeat(seat1Typist);
-//        System.out.println();
-//
-//        printSeat(seat2Typist);
-//        System.out.println();
-//
-//        printSeat(seat3Typist);
-//        System.out.println();
-//
+    public static void printRace(ArrayList<JTextPane> textAreas, JPanel panel_) {
+
+        for (int i = 0; i < GuiTypingRace.currentGuiTypists.size(); ++i) {
+            printSeat(GuiTypingRace.currentGuiTypists.get(i), textAreas.get(i), panel_);
+        }
+
 //        multiplePrint('=', passageLength + 3);
 //        System.out.println();
 //        System.out.println("  [~] = burnt out    [<] = just mistyped");
-//    }
+    }
 
     /**
      * Prints a single typist's lane.
@@ -274,17 +257,27 @@ public class GuiTypingRace
      *
      * @param theTypist the typist whose lane to print
      */
-//    public static void printSeat(Typist theTypist)
-//    {
-//        int spacesBefore = theTypist.getProgress();
-//        int spacesAfter  = passageLength - theTypist.getProgress();
-//
+    public static void printSeat(GuiTypist theTypist, JTextPane textPane, JPanel panel_)
+    {
+        textPane.setText(GuiTypingRace.currentPassage);
+
+        int spacesBefore = theTypist.getProgress();
+        int spacesAfter  = passageLength - theTypist.getProgress();
+
+        SimpleAttributeSet attributes = new SimpleAttributeSet();
+        StyleConstants.setForeground(attributes, theTypist.getColour());
+
+        textPane.getStyledDocument().setCharacterAttributes(0, spacesBefore, attributes, true);
+
+        panel_.revalidate();
+        panel_.repaint();
+
 //        System.out.print('|');
 //        multiplePrint(' ', spacesBefore);
 //
 //        // Always show the typist's symbol so they can be identified on screen.
 //        // Append ~ when burnt out so the state is visible without hiding identity.
-//        System.out.print(theTypist.getSymbol());
+//        System.out.print(theTypist.getSymbolString());
 //        if (theTypist.isBurntOut())
 //        {
 //            System.out.print('~');
@@ -300,7 +293,7 @@ public class GuiTypingRace
 //        multiplePrint(' ', spacesAfter);
 //        System.out.print('|');
 //        System.out.print(' ');
-//
+
 //        // Print name and accuracy
 //        if (theTypist.isBurntOut())
 //        {
@@ -319,7 +312,7 @@ public class GuiTypingRace
 //            System.out.print(theTypist.getName()
 //                    + " (Accuracy: " + theTypist.getAccuracy() + ")");
 //        }
-//    }
+    }
 
     /**
      * Prints a character a given number of times.
@@ -337,72 +330,19 @@ public class GuiTypingRace
         }
     }
 
-    //method the sets length of passage before the start of each race
-    public static void setPassageLength(int length) {
-        final int minimumLength = 3;
-        if (length < minimumLength) {
-            GuiTypingRace.passageLength = 3;
-            return;
-        }
-        GuiTypingRace.passageLength = length;
-    }
-
-    //used to generate random passage length;
-    //
-    public static int generateRandomPassageLength() {
-        Random r = new Random();
-        //making sure minimum length is 3
-        return r.nextInt(47) + 3;
-    }
-
-    //method allows user to input integer answer to a question:
-    //
-    public static int inputInt(String Message) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print(Message);
-        String answer = scanner.nextLine();
-
-        return Integer.parseInt(answer);
-    }
-
-    //allows the user to input the number of races they want:
-    //until its greater than 0
-    public static int inputNumberRaces() {
-        int number = inputInt("Enter the number of races: ");
-        while (number <= 0) {
-            System.out.println("The number of races must be greater than 0");
-            number = inputInt("Enter the number of races: ");
-        }
-
-        return number;
-    }
-
-    //configureRace():
-    //Flow of configureRace:
-    //display Frame -> This is another method
-    //grab all information -> (event method) we probably do it by adding event listener to button which does all the
-    //      Passage selected: -> then set it
-    //      number of typists -> return value
-    //      difficulty modifiers -> we will represent as a record:
-    //                              fieldOne = tells us if its on/off
-    //                              fieldTwo = value to adjust one of the slideBack or progress step by or accuracy
-    // each difficulty modifier will be set as a field
-    //return number of typists they want
-
     //method to initialise typists before all possible future games:
     //
     public static void initialiseTypists() {
         GuiTypingRace.guiTypists = new HashMap<String, GuiTypist>(6);
         String [] names = {"TURBO_FINGERS", "QWERTY_QUEEN", "HUNT_N_PECK", "MCQUEEN", "BOBBY", "JAMES"};
         for (int i = 0; i < 6; ++i) {
-            GuiTypingRace.guiTypists.put(names[i], new GuiTypist('T', names[i], 0.5, "DEFAULT",
-                    "DEFAULT", "red", "DEFAULT"));
+            GuiTypingRace.guiTypists.put(names[i], new GuiTypist("T", names[i], 0.5, "DEFAULT",
+                    "DEFAULT", "null", "DEFAULT"));
         }
     }
 
     public static void displayFrame() {
-        //let's add the buttons
+        //let's add the frame
         //
         GuiTypingRace.frame = new JFrame("Typing Race competition: ");
         GuiTypingRace.frame.setLayout(new BoxLayout(GuiTypingRace.frame.getContentPane(), BoxLayout.Y_AXIS));
@@ -431,13 +371,13 @@ public class GuiTypingRace
 
         GuiTypingRace.mainPanel = new JPanel();
         GuiTypingRace.mainPanel.setSize(100, 100);
-        GuiTypingRace.mainPanel.setLayout(new BoxLayout(GuiTypingRace.mainPanel, BoxLayout.Y_AXIS)); 
+        GuiTypingRace.mainPanel.setLayout(new BoxLayout(GuiTypingRace.mainPanel, BoxLayout.Y_AXIS));
 
         GuiTypingRace.frame.add(buttonsPanel);
         GuiTypingRace.frame.add(GuiTypingRace.mainPanel);
 
-        GuiTypingRace.frame.setSize(500, 500);
-        GuiTypingRace.frame.setLocation(300, 300);
+        GuiTypingRace.frame.setSize(900, 600);
+        GuiTypingRace.frame.setLocation(100, 100);
         GuiTypingRace.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close when we press X button
         GuiTypingRace.frame.setVisible(true); //make sure the frame is displayed.
     }
@@ -446,13 +386,13 @@ public class GuiTypingRace
 
         passages = new DefaultListModel<>();
 
-        passages.add("The quick brown fox jumps over dog.");
-        passages.add("Mountains stand tall under blue skies.");
-        passages.add("Rain falls softly on the green grass.");
+        passages.addElement("The quick brown fox jumps over dog.");
+        passages.addElement("Mountains stand tall under blue skies.");
+        passages.addElement("Rain falls softly on the green grass.");
 
     }
 
-    public static ArrayList<String> getPassages() {
+    public static DefaultListModel<String> getPassages() {
         return GuiTypingRace.passages;
     }
 
@@ -481,7 +421,7 @@ public class GuiTypingRace
         GuiTypingRace.currentNumberOfPlayers = selectedNumberOfTypists.intValue();
     }
 
-    public Set<String> getNamesOfTypists () {
+    public static Set<String> getNamesOfTypists () {
         return GuiTypingRace.guiTypists.keySet();
     }
 
@@ -489,11 +429,20 @@ public class GuiTypingRace
         return GuiTypingRace.currentNumberOfPlayers;
     }
 
-    public static JFrame getParentFrame_() {
+    public static JFrame getParentFrame() {
         return GuiTypingRace.frame;
     }
 
     public static HashMap<String, GuiTypist> getGuiTypists() {
         return GuiTypingRace.guiTypists;
+    }
+
+    public static void getPassageInfo() {
+        System.out.println(GuiTypingRace.currentPassage);
+        System.out.println(GuiTypingRace.passageLength);
+    }
+
+    public static String getPassage() {
+        return GuiTypingRace.currentPassage;
     }
 }
