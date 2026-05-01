@@ -19,7 +19,10 @@ public class GuiTypingRace
     private static int passageLength; //used to keep track of the length of current passage
     private static int currentNumberOfPlayers;
 
-    private static GuiTypist [] guiTypists;
+    private static HashMap<String, GuiTypist> guiTypists; //keeps track of all the possible typists
+    private static ArrayList<GuiTypist> currentGuiTypists = new ArrayList<GuiTypist>(6);
+
+
     private static JFrame frame; //this is the frame at that makes up the GUi
     private static JPanel mainPanel; //This is the panel that will be swicthed out
     // Accuracy thresholds for mistype and burnout events
