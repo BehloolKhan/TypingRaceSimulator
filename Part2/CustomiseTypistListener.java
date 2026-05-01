@@ -20,8 +20,8 @@ public class CustomiseTypistListener implements ActionListener {
         this.mainPanel = (JPanel) mainPanel;
     }
 
-    public void setTypistsNames() {
-        for (String name: GuiTypingRace.getNamesOfTypists()) {typistsNames.addElement(name);}
+    public void setTypistsNames(DefaultComboBoxModel<String> typistsNames_) {
+        for (String name: GuiTypingRace.getNamesOfTypists()) {typistsNames_.addElement(name);}
     }
 
     @Override
