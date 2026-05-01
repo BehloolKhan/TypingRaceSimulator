@@ -1,10 +1,9 @@
 # TypingRaceSimulator
 This is my OOP project
 
-#### guide for Read me file in general:
-This README file n the root should contain 
-setup instructions, dependencies, 
-and usage guidelines for both parts.
+#### dependancies:
+* There are no external dependancies required
+* All modules used are part of the standard java library
 
 ### Just some quick reminders for myself:
 * I am free to use JUnit 5 if you wish. 
