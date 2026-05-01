@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 class ConfigureRace implements ActionListener
 {
-    private JFrame parentFrame;
+    private final JFrame parentFrame;
     private JPanel mainPanel;
 
 
@@ -39,7 +39,7 @@ class ConfigureRace implements ActionListener
         this.mainPanel.add(scrollPassages);
 
         JLabel button = new JLabel("Add New passage");
-        JTextArea newPassage = new JTextArea(2, 21); //making sure max passage length is 42
+        JTextArea newPassage = new JTextArea(); //making sure max passage length is 42
         JButton submitPassage = new JButton("Submit New Passage");
 
         //adding actionListener object to submitPassage
@@ -73,10 +73,11 @@ class ConfigureRace implements ActionListener
         this.mainPanel.add(nightShift);
 
         this.mainPanel.add(submitButton);
+        submitButton.setVisible(true);
 
         this.mainPanel.revalidate(); //making sure the panel updates
         this.mainPanel.repaint(); //making sure its redrawn
-    };
+    }
 
 }
 
@@ -84,7 +85,7 @@ class ConfigureRace implements ActionListener
 //
 class SubmitPassageListener implements ActionListener {
     //going to need a pointer to the TextArea object because we need to grab the information from it
-    private JTextArea textArea;
+    private final JTextArea textArea;
     public SubmitPassageListener(JTextArea textArea_) {
         this.textArea = textArea_;
 
@@ -103,16 +104,15 @@ class SubmitPassageListener implements ActionListener {
 }
 
 class SubmitButtonListener implements ActionListener {
-    private String passageSelected;
-    private Integer numberOfRaces;
+    private final JList<String> passages;
+    private final JComboBox typists;
 
-    private JCheckBox autoCorrect;
+    private final JCheckBox autoCorrect;
     private JCheckBox caffeineMode;
-    private JCheckBox NightShift;
+    private final JCheckBox NightShift;
 
     SubmitButtonListener(JList<String> passages_, JComboBox typists_, JCheckBox autoCorrect_,
                          JCheckBox caffeineMode_, JCheckBox NightShift_) {
-
         this.passages = passages_;
         this.typists = typists_;
 
@@ -121,7 +121,6 @@ class SubmitButtonListener implements ActionListener {
         this.NightShift = NightShift_;
 
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         //set the passage:
