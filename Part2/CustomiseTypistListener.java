@@ -124,6 +124,7 @@ class SubmitTypistListener implements ActionListener {
             G1.add(current);
             parentPanel_.add(current);
         }
+        return G1;
     }
 
     @Override
