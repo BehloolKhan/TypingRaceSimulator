@@ -31,7 +31,7 @@ public class Typist
 
     private double previousAccuracy = 0.0;
     private boolean mistyped = false; //by default it will be false
-
+    private int charsTyped; 
     // Constructor of class Typist
     /**
      * Constructor for objects of class Typist.
