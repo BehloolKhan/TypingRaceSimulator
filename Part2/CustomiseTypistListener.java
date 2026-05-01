@@ -70,12 +70,8 @@ public class CustomiseTypistListener implements ActionListener {
 //
 class SelectTypistListener implements ActionListener {
 
-    private DefaultListModel<String> typistNames;
+    private static ArrayList<String> names = new ArrayList<>(6);
 
-    public SelectTypistListener(DefaultListModel<String> typistNames_) {
-        this.typistNames = typistNames_;
-    }
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         Object comboBox = e.getSource();
