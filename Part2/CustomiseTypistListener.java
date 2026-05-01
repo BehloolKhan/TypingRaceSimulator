@@ -78,7 +78,13 @@ class SelectTypistListener implements ActionListener {
         JComboBox newComboBox = (JComboBox) comboBox;
 
         String valueSelected = (String) newComboBox.getSelectedItem();
-        this.typistNames.removeElement(valueSelected);
+
+        if (doesExits(valueSelected)) {
+            displayErrorMessage(valueSelected);
+        }
+        else {
+            names.add(valueSelected);
+        }
     }
 
     private static boolean doesExits(String value) {
