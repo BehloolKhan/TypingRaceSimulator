@@ -7,25 +7,9 @@ import java.lang.Math;
 import java.util.Random;
 import java.util.Scanner;
 import javax.swing.*; // will need this module for our GUI
-
-
-        this.mainPanel.revalidate(); //making sure the panel updates
-        this.mainPanel.repaint(); //making sure its redrawn
-    };
-    
-}
-
-
-    }
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String passage = this.textArea.getText();
-        passage = passage.replaceAll("\\r?\\n", " "); //including new line character for both windows and Unix
-
-        GuiTypingRace.getPassages().addElement(passage);
-        this.textArea.setText("");
-    }
-}
+import javax.swing.Timer;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 
 
 public class GuiTypingRace
