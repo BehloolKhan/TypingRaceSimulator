@@ -1,19 +1,23 @@
 package Part2;
 import Part1.Typist;
 
+import java.awt.*;
+
 
 public class GuiTypist extends Typist{
 
     private String TypingStyle;
     private String KeyBoardType;
-    private String colour;
-    private String Accessories;
+    private Color colour;
+    private String Accessory;
+    private String symbol;
 
     //accessor methods for all fields
     //
     protected void setTypingStyle(String typingStyle) {
         if(!(typingStyle.equals("Touch Typist") || typingStyle.equals("Hunt and Peck") ||
                 typingStyle.equals("Phone thumbs") || typingStyle.equals("Voice-to-text"))) {
+            this.TypingStyle = "Touch Typist";
             return;
         }
 
@@ -30,9 +34,24 @@ public class GuiTypist extends Typist{
     }
 
     protected void setColour(String colour_) {
-        this.colour = colour_;
-        if (colour_.equals("")) {
-            this.colour = "red";
+
+        if (colour_.equals("YELLOW")) {
+            this.colour = Color.YELLOW;
+        }
+        else if (colour_.equals("BLUE")) {
+            this.colour = Color.BLUE;
+        }
+        else if (colour_.equals("GREEN")) {
+            this.colour = Color.GREEN;
+        }
+        else if (colour_.equals("RED")) {
+            this.colour = Color.RED;
+        }
+        else if (colour_.equals("MAGENTA")) {
+            this.colour = Color.MAGENTA;
+        }
+        else {
+            this.colour = Color.RED;
         }
     }
 
@@ -52,7 +71,7 @@ public class GuiTypist extends Typist{
         return this.KeyBoardType;
     }
 
-    protected String getColour() {
+    protected Color getColour() {
         return this.colour;
     }
 
@@ -60,15 +79,25 @@ public class GuiTypist extends Typist{
         return this.Accessory;
     }
 
-    public GuiTypist(char typistSymbol, String typistName, double typistAccuracy, String typingStyle,
+    public GuiTypist(String typistSymbol, String typistName, double typistAccuracy, String typingStyle,
                      String keyBoardType, String colour, String Accessory) {
 
-        super(typistSymbol, typistName, typistAccuracy);
 
+        super(typistName, typistAccuracy);
+        setSymbol(typistSymbol);
         setAccessories(Accessory);
         setColour(colour);
         setKeyBoardType(keyBoardType);
         setTypingStyle(typingStyle);
-        
+
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+
+    public String getSymbolString() {
+        return this.symbol;
     }
 }
