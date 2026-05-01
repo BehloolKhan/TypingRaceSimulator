@@ -32,9 +32,9 @@ public class GuiTypingRace
 
     //following contains modes that Can be applied to everyone
     //
-    private boolean autoCorrectOn; // used to track weather auto-correct is on or off
-    private boolean caffeineMode; // used to track weather caffeineMode is on or off
-    private boolean NightShift; //used to keep track of weather Night shift is on or off
+    private static boolean autoCorrectOn; // used to track weather auto correct is on or off
+    private static boolean caffeineMode; // used to track weather caffeineMode is on or off
+    private static boolean nightShift; //used to keep track of weather Night shift is on or off
 
 
     public static void main (String[] args) {
