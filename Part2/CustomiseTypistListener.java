@@ -120,6 +120,7 @@ class SubmitTypistListener implements ActionListener {
         for (int i = 0; i < options.length; ++i) {
             current = new JRadioButton();
             current.setText(options[i]);
+            current.setActionCommand(options[i]);
             G1.add(current);
             parentPanel_.add(current);
         }
